@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C337D831C4DEAB20069EC96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C337D821C4DEAB20069EC96 /* AppDelegate.swift */; };
+		5C337D851C4DEAB20069EC96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C337D841C4DEAB20069EC96 /* ViewController.swift */; };
+		5C337D881C4DEAB20069EC96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C337D861C4DEAB20069EC96 /* Main.storyboard */; };
+		5C337D8A1C4DEAB20069EC96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C337D891C4DEAB20069EC96 /* Assets.xcassets */; };
+		5C337D8D1C4DEAB20069EC96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C337D8B1C4DEAB20069EC96 /* LaunchScreen.storyboard */; };
+		5C337D951C4DEAEC0069EC96 /* JYMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C337D941C4DEAEC0069EC96 /* JYMainViewController.swift */; };
+		5C337D971C4DF1170069EC96 /* JYJokeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C337D961C4DF1170069EC96 /* JYJokeTableViewController.swift */; };
+		5C3895521C4DF300007A856B /* JYAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3895501C4DF300007A856B /* JYAboutViewController.swift */; };
+		5C3895531C4DF300007A856B /* JYAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3895511C4DF300007A856B /* JYAboutViewController.xib */; };
+		5C3895551C4E0DCD007A856B /* JYRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3895541C4E0DCD007A856B /* JYRefreshView.swift */; };
+		5C3895571C4E0DFE007A856B /* JYRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3895561C4E0DFE007A856B /* JYRefreshView.xib */; };
+		5C38955F1C4E152D007A856B /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C38955D1C4E152D007A856B /* avatar.jpg */; };
+		5C3895601C4E152D007A856B /* me.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5C38955E1C4E152D007A856B /* me.jpeg */; };
+		5C3895621C4E1A85007A856B /* JYHttprRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3895611C4E1A85007A856B /* JYHttprRequest.swift */; };
+		5C3895651C4E3455007A856B /* NSDictionaryExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3895641C4E3455007A856B /* NSDictionaryExt.swift */; };
+		5C3895671C4E5438007A856B /* NSStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3895661C4E5438007A856B /* NSStringExt.swift */; };
+		5C3895691C4E57B8007A856B /* JYCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3895681C4E57B8007A856B /* JYCommentsViewController.swift */; };
+		5C38956B1C4E5891007A856B /* JYImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38956A1C4E5891007A856B /* JYImageViewController.swift */; };
+		5C38956E1C4E644A007A856B /* CYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38956C1C4E644A007A856B /* CYTableViewCell.swift */; };
+		5C38956F1C4E644A007A856B /* CYTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C38956D1C4E644A007A856B /* CYTableViewCell.xib */; };
+		5C62D0AF1C4F804E00E4387F /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C62D0AE1C4F804E00E4387F /* UIViewExt.swift */; };
+		5CCC15A91C50C3D10054B4C3 /* JYCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15A71C50C3D10054B4C3 /* JYCommentCell.swift */; };
+		5CCC15AA1C50C3D10054B4C3 /* JYCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCC15A81C50C3D10054B4C3 /* JYCommentCell.xib */; };
+		5CCC15AC1C50D3530054B4C3 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15AB1C50D3530054B4C3 /* UIViewControllerExt.swift */; };
+		5CCC15AE1C50F8340054B4C3 /* FileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15AD1C50F8340054B4C3 /* FileUtility.swift */; };
+		5CCC15B11C50FFB80054B4C3 /* JYContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15AF1C50FFB80054B4C3 /* JYContentCell.swift */; };
+		5CCC15B21C50FFB80054B4C3 /* JYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCC15B01C50FFB80054B4C3 /* JYContentCell.xib */; };
+		5CF8C7D41C4F6E8D0009F692 /* UIImageViewWebExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF8C7D31C4F6E8D0009F692 /* UIImageViewWebExt.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5C337D7F1C4DEAB20069EC96 /* JokeClient-Yin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JokeClient-Yin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C337D821C4DEAB20069EC96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C337D841C4DEAB20069EC96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C337D871C4DEAB20069EC96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C337D891C4DEAB20069EC96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C337D8C1C4DEAB20069EC96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C337D8E1C4DEAB20069EC96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C337D941C4DEAEC0069EC96 /* JYMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYMainViewController.swift; sourceTree = "<group>"; };
+		5C337D961C4DF1170069EC96 /* JYJokeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYJokeTableViewController.swift; sourceTree = "<group>"; };
+		5C3895501C4DF300007A856B /* JYAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYAboutViewController.swift; sourceTree = "<group>"; };
+		5C3895511C4DF300007A856B /* JYAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYAboutViewController.xib; sourceTree = "<group>"; };
+		5C3895541C4E0DCD007A856B /* JYRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYRefreshView.swift; sourceTree = "<group>"; };
+		5C3895561C4E0DFE007A856B /* JYRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYRefreshView.xib; sourceTree = "<group>"; };
+		5C38955D1C4E152D007A856B /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
+		5C38955E1C4E152D007A856B /* me.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = me.jpeg; sourceTree = "<group>"; };
+		5C3895611C4E1A85007A856B /* JYHttprRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYHttprRequest.swift; sourceTree = "<group>"; };
+		5C3895641C4E3455007A856B /* NSDictionaryExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExt.swift; sourceTree = "<group>"; };
+		5C3895661C4E5438007A856B /* NSStringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringExt.swift; sourceTree = "<group>"; };
+		5C3895681C4E57B8007A856B /* JYCommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYCommentsViewController.swift; sourceTree = "<group>"; };
+		5C38956A1C4E5891007A856B /* JYImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYImageViewController.swift; sourceTree = "<group>"; };
+		5C38956C1C4E644A007A856B /* CYTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYTableViewCell.swift; sourceTree = "<group>"; };
+		5C38956D1C4E644A007A856B /* CYTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYTableViewCell.xib; sourceTree = "<group>"; };
+		5C62D0AE1C4F804E00E4387F /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		5CCC15A71C50C3D10054B4C3 /* JYCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYCommentCell.swift; sourceTree = "<group>"; };
+		5CCC15A81C50C3D10054B4C3 /* JYCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYCommentCell.xib; sourceTree = "<group>"; };
+		5CCC15AB1C50D3530054B4C3 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		5CCC15AD1C50F8340054B4C3 /* FileUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtility.swift; sourceTree = "<group>"; };
+		5CCC15AF1C50FFB80054B4C3 /* JYContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYContentCell.swift; sourceTree = "<group>"; };
+		5CCC15B01C50FFB80054B4C3 /* JYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYContentCell.xib; sourceTree = "<group>"; };
+		5CF8C7D31C4F6E8D0009F692 /* UIImageViewWebExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewWebExt.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C337D7C1C4DEAB20069EC96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C337D761C4DEAB20069EC96 = {
+			isa = PBXGroup;
+			children = (
+				5C337D811C4DEAB20069EC96 /* JokeClient-Yin */,
+				5C337D801C4DEAB20069EC96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C337D801C4DEAB20069EC96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C337D7F1C4DEAB20069EC96 /* JokeClient-Yin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C337D811C4DEAB20069EC96 /* JokeClient-Yin */ = {
+			isa = PBXGroup;
+			children = (
+				5C337D821C4DEAB20069EC96 /* AppDelegate.swift */,
+				5C337D841C4DEAB20069EC96 /* ViewController.swift */,
+				5C337D861C4DEAB20069EC96 /* Main.storyboard */,
+				5C337D891C4DEAB20069EC96 /* Assets.xcassets */,
+				5C337D8B1C4DEAB20069EC96 /* LaunchScreen.storyboard */,
+				5C337D8E1C4DEAB20069EC96 /* Info.plist */,
+				5C337D941C4DEAEC0069EC96 /* JYMainViewController.swift */,
+				5C337D961C4DF1170069EC96 /* JYJokeTableViewController.swift */,
+				5C3895501C4DF300007A856B /* JYAboutViewController.swift */,
+				5C3895511C4DF300007A856B /* JYAboutViewController.xib */,
+				5C3895541C4E0DCD007A856B /* JYRefreshView.swift */,
+				5C3895561C4E0DFE007A856B /* JYRefreshView.xib */,
+				5C3895631C4E3414007A856B /* Utility */,
+				5C38955C1C4E14FE007A856B /* image */,
+				5C3895681C4E57B8007A856B /* JYCommentsViewController.swift */,
+				5C38956A1C4E5891007A856B /* JYImageViewController.swift */,
+				5C38956C1C4E644A007A856B /* CYTableViewCell.swift */,
+				5C38956D1C4E644A007A856B /* CYTableViewCell.xib */,
+				5CCC15A71C50C3D10054B4C3 /* JYCommentCell.swift */,
+				5CCC15A81C50C3D10054B4C3 /* JYCommentCell.xib */,
+				5CCC15AF1C50FFB80054B4C3 /* JYContentCell.swift */,
+				5CCC15B01C50FFB80054B4C3 /* JYContentCell.xib */,
+			);
+			path = "JokeClient-Yin";
+			sourceTree = "<group>";
+		};
+		5C38955C1C4E14FE007A856B /* image */ = {
+			isa = PBXGroup;
+			children = (
+				5C38955D1C4E152D007A856B /* avatar.jpg */,
+				5C38955E1C4E152D007A856B /* me.jpeg */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		5C3895631C4E3414007A856B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5CCC15AB1C50D3530054B4C3 /* UIViewControllerExt.swift */,
+				5C3895611C4E1A85007A856B /* JYHttprRequest.swift */,
+				5C3895641C4E3455007A856B /* NSDictionaryExt.swift */,
+				5C3895661C4E5438007A856B /* NSStringExt.swift */,
+				5CF8C7D31C4F6E8D0009F692 /* UIImageViewWebExt.swift */,
+				5C62D0AE1C4F804E00E4387F /* UIViewExt.swift */,
+				5CCC15AD1C50F8340054B4C3 /* FileUtility.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C337D7E1C4DEAB20069EC96 /* JokeClient-Yin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C337D911C4DEAB20069EC96 /* Build configuration list for PBXNativeTarget "JokeClient-Yin" */;
+			buildPhases = (
+				5C337D7B1C4DEAB20069EC96 /* Sources */,
+				5C337D7C1C4DEAB20069EC96 /* Frameworks */,
+				5C337D7D1C4DEAB20069EC96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JokeClient-Yin";
+			productName = "JokeClient-Yin";
+			productReference = 5C337D7F1C4DEAB20069EC96 /* JokeClient-Yin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C337D771C4DEAB20069EC96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = cyin;
+				TargetAttributes = {
+					5C337D7E1C4DEAB20069EC96 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = JE8CSGTB5D;
+					};
+				};
+			};
+			buildConfigurationList = 5C337D7A1C4DEAB20069EC96 /* Build configuration list for PBXProject "JokeClient-Yin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C337D761C4DEAB20069EC96;
+			productRefGroup = 5C337D801C4DEAB20069EC96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C337D7E1C4DEAB20069EC96 /* JokeClient-Yin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C337D7D1C4DEAB20069EC96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CCC15B21C50FFB80054B4C3 /* JYContentCell.xib in Resources */,
+				5C337D8D1C4DEAB20069EC96 /* LaunchScreen.storyboard in Resources */,
+				5C38955F1C4E152D007A856B /* avatar.jpg in Resources */,
+				5CCC15AA1C50C3D10054B4C3 /* JYCommentCell.xib in Resources */,
+				5C337D8A1C4DEAB20069EC96 /* Assets.xcassets in Resources */,
+				5C337D881C4DEAB20069EC96 /* Main.storyboard in Resources */,
+				5C38956F1C4E644A007A856B /* CYTableViewCell.xib in Resources */,
+				5C3895601C4E152D007A856B /* me.jpeg in Resources */,
+				5C3895571C4E0DFE007A856B /* JYRefreshView.xib in Resources */,
+				5C3895531C4DF300007A856B /* JYAboutViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C337D7B1C4DEAB20069EC96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C337D851C4DEAB20069EC96 /* ViewController.swift in Sources */,
+				5C38956E1C4E644A007A856B /* CYTableViewCell.swift in Sources */,
+				5C3895671C4E5438007A856B /* NSStringExt.swift in Sources */,
+				5C337D971C4DF1170069EC96 /* JYJokeTableViewController.swift in Sources */,
+				5CCC15A91C50C3D10054B4C3 /* JYCommentCell.swift in Sources */,
+				5C38956B1C4E5891007A856B /* JYImageViewController.swift in Sources */,
+				5CCC15AE1C50F8340054B4C3 /* FileUtility.swift in Sources */,
+				5C3895691C4E57B8007A856B /* JYCommentsViewController.swift in Sources */,
+				5C337D951C4DEAEC0069EC96 /* JYMainViewController.swift in Sources */,
+				5CCC15B11C50FFB80054B4C3 /* JYContentCell.swift in Sources */,
+				5C3895521C4DF300007A856B /* JYAboutViewController.swift in Sources */,
+				5C337D831C4DEAB20069EC96 /* AppDelegate.swift in Sources */,
+				5CCC15AC1C50D3530054B4C3 /* UIViewControllerExt.swift in Sources */,
+				5CF8C7D41C4F6E8D0009F692 /* UIImageViewWebExt.swift in Sources */,
+				5C3895651C4E3455007A856B /* NSDictionaryExt.swift in Sources */,
+				5C3895621C4E1A85007A856B /* JYHttprRequest.swift in Sources */,
+				5C62D0AF1C4F804E00E4387F /* UIViewExt.swift in Sources */,
+				5C3895551C4E0DCD007A856B /* JYRefreshView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C337D861C4DEAB20069EC96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C337D871C4DEAB20069EC96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C337D8B1C4DEAB20069EC96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C337D8C1C4DEAB20069EC96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C337D8F1C4DEAB20069EC96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C337D901C4DEAB20069EC96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C337D921C4DEAB20069EC96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "JokeClient-Yin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cyin.JokeClient-Yin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5C337D931C4DEAB20069EC96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "JokeClient-Yin/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.cyin.JokeClient-Yin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C337D7A1C4DEAB20069EC96 /* Build configuration list for PBXProject "JokeClient-Yin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C337D8F1C4DEAB20069EC96 /* Debug */,
+				5C337D901C4DEAB20069EC96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C337D911C4DEAB20069EC96 /* Build configuration list for PBXNativeTarget "JokeClient-Yin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C337D921C4DEAB20069EC96 /* Debug */,
+				5C337D931C4DEAB20069EC96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C337D771C4DEAB20069EC96 /* Project object */;
+}
