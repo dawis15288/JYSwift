@@ -1,0 +1,6 @@
+framework module Pods_JYHTMLSimpleProject {
+  umbrella header "Pods-JYHTMLSimpleProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
