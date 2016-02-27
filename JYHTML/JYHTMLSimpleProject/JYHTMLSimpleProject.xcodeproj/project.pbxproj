@@ -15,6 +15,7 @@
 		5C730EDE1C793D33009E99E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C730EDC1C793D33009E99E9 /* LaunchScreen.storyboard */; };
 		5C7BD59D1C79A9E900291C5C /* JYProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7BD59C1C79A9E900291C5C /* JYProfileViewController.swift */; };
 		5C7BD59F1C79B6AC00291C5C /* JYCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7BD59E1C79B6AC00291C5C /* JYCell.swift */; };
+		5C8077EC1C813E3E00522D53 /* JYCycleLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8077EB1C813E3E00522D53 /* JYCycleLoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5C730EDF1C793D33009E99E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C7BD59C1C79A9E900291C5C /* JYProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYProfileViewController.swift; sourceTree = "<group>"; };
 		5C7BD59E1C79B6AC00291C5C /* JYCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYCell.swift; sourceTree = "<group>"; };
+		5C8077EB1C813E3E00522D53 /* JYCycleLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYCycleLoaderView.swift; sourceTree = "<group>"; };
 		6E82F3B86B74F677B191942F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEBC8C0864CBDE5610D3172 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F2A8AD1D0E38C6215F704CF3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				5C730EDF1C793D33009E99E9 /* Info.plist */,
 				5C7BD59C1C79A9E900291C5C /* JYProfileViewController.swift */,
 				5C7BD59E1C79B6AC00291C5C /* JYCell.swift */,
+				5C8077EB1C813E3E00522D53 /* JYCycleLoaderView.swift */,
 			);
 			path = JYHTMLSimpleProject;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				5C730ED61C793D33009E99E9 /* ViewController.swift in Sources */,
 				5C730ED41C793D33009E99E9 /* AppDelegate.swift in Sources */,
+				5C8077EC1C813E3E00522D53 /* JYCycleLoaderView.swift in Sources */,
 				5C7BD59F1C79B6AC00291C5C /* JYCell.swift in Sources */,
 				5C7BD59D1C79A9E900291C5C /* JYProfileViewController.swift in Sources */,
 			);

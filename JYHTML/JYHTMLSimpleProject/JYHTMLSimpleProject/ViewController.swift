@@ -14,6 +14,7 @@ import HTMLReader
 
 class ViewController: UIViewController {
     @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var cycleLoadViw: JYCycleLoaderView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     var imageView: UIImageView!
@@ -28,17 +29,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //imageView = UIImageView()
-        
-        
-        
-        
-        
+        cycleLoadViw.startAnimation()
         
         fetchCharts()
     }
     
     func fetchCharts() {
+        
+        print("fetchCharts()")
         
         Alamofire.request(.GET, url).responseString(completionHandler: { (responseStrings) -> Void in
             
@@ -59,7 +57,7 @@ class ViewController: UIViewController {
                 
                 if let tableEelement = table as? HTMLElement {
                     
-                    //print(tableEelement)
+                    print(tableEelement)
                     
                     for row in tableEelement.children {
                         

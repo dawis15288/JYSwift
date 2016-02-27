@@ -12,6 +12,7 @@ import HTMLReader
 
 class JYProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var jyCellLoaderView: JYCycleLoaderView!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -33,13 +34,15 @@ class JYProfileViewController: UIViewController, UICollectionViewDataSource, UIC
 
         // Do any additional setup after loading the view.
         
+       
+        
         fetchCharts()
         
     }
     
     func fetchCharts() {
         
-        //print("fetchCharts")
+         jyCellLoaderView.startAnimation()
         
         if let url = NSURL(string: url) {
             
@@ -123,7 +126,11 @@ class JYProfileViewController: UIViewController, UICollectionViewDataSource, UIC
                         
                         }
                 
-                    }
+                    } else {
+                
+                        print("something is error\(response)")
+                
+                }
                 
                 
                 })
@@ -164,6 +171,8 @@ class JYProfileViewController: UIViewController, UICollectionViewDataSource, UIC
         
         if let imageURL = NSURL(string: imgURL[indexPath.row]) {
             
+            self.jyCellLoaderView.startAnimation()
+            
             let request = NSURLRequest(URL: imageURL)
             
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -181,6 +190,8 @@ class JYProfileViewController: UIViewController, UICollectionViewDataSource, UIC
                                 self.jyCell.imageView.image = UIImage(data: data)
                                 
                                 self.jyCell.titleLabel.text = self.titles[self.row]
+                                
+                                self.jyCellLoaderView.stopAnimation()
                                 
                             })
                             
