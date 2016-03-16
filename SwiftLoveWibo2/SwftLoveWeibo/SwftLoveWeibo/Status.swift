@@ -62,8 +62,6 @@ class Status: NSObject {
                 
                 //source = "来自: \(res)"
                 
-                print(str)
-                
                 if let start = str.rangeOfString(">")?.startIndex {
                     
                     let res = str.substringFromIndex(start)
@@ -109,6 +107,8 @@ class Status: NSObject {
             for dicts in pic_urls! {
                 
                 if let urlString = dicts["thumbnail_pic"] as? String {
+                    
+                    print("if let urlString = dicts as? String {\(urlString)")
                     
                     stordPictureURLs?.append(NSURL(string: urlString)!)
                     
@@ -206,60 +206,41 @@ class Status: NSObject {
         
         dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in
             
-            var urlStr = "https://api.weibo.com/2/statuses/friends_timeline.json?"
-            
-            urlStr += "access_token=\(weiboAccessToken)&"
-            
-            urlStr += "count=50&"
-            
-            urlStr += "page=\(page)&"
-            
-            urlStr += "base_app=0&"
-            
-            urlStr += "feature=0&"
-            
-            urlStr += "trim_user=0"
+            let urlStr = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=\(weiboAccessToken)&count=50&page=\(page)&base_app=0&feature=0&trim_user=0"
             
             let request = NSURLRequest(URL: NSURL(string: urlStr)!)
             
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
             
-            let task: NSURLSessionDataTask = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            let task: NSURLSessionDataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            
+                if response != nil {
                 
-                let statusCode = (response as! NSHTTPURLResponse).statusCode
-                
-                if statusCode == 200 {
+                    if (response as! NSHTTPURLResponse).statusCode == 200 {
+                        
+                        do {
+                        
+                            let dataJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+                            
+                            if let moduels = dataJSON["statuses"] as? [[String: AnyObject]] {
+                                
+                               // print("获取到的图片的url\(moduels[0])")
+                            
+                                let statuses = self.status(moduels)
+                                
+                                completeionHandler(statuses: statuses, error: nil)
+                            
+                            }
+                            
+                            
+                        
+                        } catch {}
                     
-                    do {
-                        
-                        
-                        let dataJSON = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
-                        
-                        //statuses
-                        
-                        if let weiboJSON = dataJSON["statuses"] as? [[String: AnyObject]] {
-                            
-                            let models = Status.status(weiboJSON)
-                            
-                            cacheWbImage(models)
-                            
-                            completeionHandler(statuses: models, error: nil)
-                        
-                        }
-                        
-                        
-                        
-                        
-                    } catch _ {
-                        
-                        
-                        
+                    
                     }
-                    
-                    
                 }
-                
-            }
+            
+            })
             
             task.resume()
             

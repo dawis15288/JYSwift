@@ -71,7 +71,7 @@ class OAuthViewController: UIViewController {
         
         let display = "mobile"
         
-        var authorizationURL = "\(authorizationEndPoint)?"
+        /*var authorizationURL = "\(authorizationEndPoint)?"
         
         authorizationURL += "client_id=\(weiboKey)&"
         
@@ -81,11 +81,11 @@ class OAuthViewController: UIViewController {
         
         authorizationURL += "display=\(display)&"
         
-        authorizationURL += "state=\(state)"
+        authorizationURL += "state=\(state)"*/
         
-        let request = NSURLRequest(URL: NSURL(string: authorizationURL)!)
+        let authorizationURL1 = "\(authorizationEndPoint)?client_id=\(weiboKey)&redirect_uri=\(redirectURL)&response_type=\(responseType)&display=\(display)&state=\(state)"
         
-        print(authorizationURL)
+        let request = NSURLRequest(URL: NSURL(string: authorizationURL1)!)
         
         webView.loadRequest(request)
         
@@ -161,17 +161,7 @@ extension OAuthViewController: UIWebViewDelegate {
         
         let redirectURL = "https://api.weibo.com/auth2/default.html"
         
-        var postParms = "\(accessTokenEndPoint)?"
-        
-        postParms += "client_id=\(weiboKey)&"
-        
-        postParms += "client_secret=\(weiboSecret)&"
-        
-        postParms += "grant_type=\(grantType)&"
-        
-        postParms += "redirect_uri=\(redirectURL)&"
-        
-        postParms += "code=\(authorizationCode)"
+        let postParms = "\(accessTokenEndPoint)?client_id=\(weiboKey)&client_secret=\(weiboSecret)&grant_type=\(grantType)&redirect_uri=\(redirectURL)&code=\(authorizationCode)"
         
         let bodyStr = "type=focus-c"
         
@@ -184,8 +174,6 @@ extension OAuthViewController: UIWebViewDelegate {
         postRequest.HTTPBody = postData
         
         //postRequest.addValue("aplication/x-www-form-urlencoded;", forHTTPHeaderField: "Content-Type")
-        
-        print(postParms)
         
         //https://api.weibo.com/oauth2/access_token?client_id=1227520346&client_scrent=097fecf20a2cca6495bd35d2d0c2d7dd&grant_type=authorization_code&redirect_uri=https://api.weibo.com/auth2/default.html&code=8434e39abc11db25039318bbd64e3951
         
@@ -207,14 +195,27 @@ extension OAuthViewController: UIWebViewDelegate {
                     
                     let account = UserAccount(dict: dataDictionary as! [String: AnyObject])
                     
-                    account.saveAccount()
+                    account.loadUserInfo({ (account, error) -> Void in
                     
-                    dispatch_async(dispatch_get_main_queue()) { [unowned self] () -> Void in
-                        
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                        
-                        
-                    }
+                        print("在获取令牌的同时获取用户信息\(account?.expires_Date)")
+                            
+                            if account != nil && error == nil{
+                                
+                                account!.saveAccount()
+                                
+                                dispatch_async(dispatch_get_main_queue()) { [unowned self] () -> Void in
+                                    
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                    
+                                    NSNotificationCenter.defaultCenter().postNotificationName(JYRootViewControllerSwitchNotification, object: true)
+                                }
+                        }
+
+                    })
+                    
+                    
+                    
+                    
                     
                 } catch _ {
                     

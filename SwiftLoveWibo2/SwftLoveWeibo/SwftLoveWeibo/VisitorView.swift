@@ -63,7 +63,9 @@ class VisitorView: UIView {
         // true 动画执行完后默认会从图层删除掉
         // false 下次你在通过-set 方法设定动画的属性时,它将再次使用你的动画,而非默认的动画
         
-        animation.removedOnCompletion = true
+        //animation.removedOnCompletion = true
+        
+        animation.removedOnCompletion = false
         
         iconView.layer.addAnimation(animation, forKey: nil)
     }

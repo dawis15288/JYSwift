@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class UserAccount: NSObject, NSCoding {
     
     var access_token: String?
@@ -19,6 +21,8 @@ class UserAccount: NSObject, NSCoding {
         didSet {
         
             expires_Date = NSDate(timeIntervalSinceNow: (expires_in?.doubleValue)!)
+            
+            print("过期时间\(expires_Date)")
         
         }
     
@@ -50,12 +54,10 @@ class UserAccount: NSObject, NSCoding {
         setValuesForKeysWithDictionary(dict)
     }
     
-    func loadUserInfo(compeletionhandler:(account: UserAccount?, error: NSError?) -> ()) {
+    func loadUserInfo(compeletionhandler: (account: UserAccount?, error: NSError?) -> Void) {
         
         let urlString = "https://api.weibo.com/2/users/show.json?access_token=\(access_token!)&uid=\(uid!)"
-        
-       // let params = ["access_token": access_token!, "uid": uid!]
-        
+   
         if let url = NSURL(string: urlString) {
             
             let request = NSURLRequest(URL: url)
@@ -74,13 +76,19 @@ class UserAccount: NSObject, NSCoding {
                                 
                                 let dataDict = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
                                 
-                                self.name = dataDict["name"] as? String
+                                    self.name = dataDict["name"] as? String
                                 
-                                self.avatar_large = dataDict["avatar_large"] as? String
+                                    self.avatar_large = dataDict["avatar_large"] as? String
                                 
-                                self.saveAccount()
+                                //self.saveAccount()
+                                
+                                NSUserDefaults.standardUserDefaults().setObject(self.name, forKey: "userName")
+                                
+                                NSUserDefaults.standardUserDefaults().setObject(self.avatar_large, forKey: "userAvatar_large")
                                 
                                 compeletionhandler(account: self, error: nil)
+                                
+                                //return
                                 
                             } catch _ {}
                         }
@@ -102,20 +110,23 @@ class UserAccount: NSObject, NSCoding {
     }
     
     class func userLogin() -> Bool {
+        
+        
     
         return loadAccount() != nil
     }
     
     //static let accountpath = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last! as NSString).stringByAppendingPathComponent("accound.plist")
     
-    static let accountPath = "accound.plist".cacheDir()
+    static let accountPath = "account.plist".cacheDir()
     
     func saveAccount() {
         
     
         NSKeyedArchiver.archiveRootObject(self, toFile: UserAccount.accountPath)
     }
-    ///Users/atom/Library/Developer/CoreSimulator/Devices/39AD07D7-51EA-476E-9916-0B1CC7C05133/data/Containers/Data/Application/1B91C4E0-5C57-4B00-80AC-A5F3BBCAA695/Documents
+    
+    
     static var account: UserAccount?
     
     class func loadAccount() -> UserAccount? {
@@ -127,6 +138,8 @@ class UserAccount: NSObject, NSCoding {
         }
         
         if account != nil {
+            
+            
             
             return account
         
@@ -161,15 +174,4 @@ class UserAccount: NSObject, NSCoding {
     
 }
 
-extension String {
-    
-    func cacheDir() -> String {
-    
-        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last! as NSString
-        
-        print(path)
-        
-        return path.stringByAppendingPathComponent((self as NSString).lastPathComponent)
-    }
 
-}

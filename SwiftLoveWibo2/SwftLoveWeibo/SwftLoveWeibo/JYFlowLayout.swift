@@ -10,6 +10,21 @@ import UIKit
 
 class JYFlowLayout: UICollectionViewFlowLayout {
     
+     override func prepareLayout() {
+        
+        itemSize = (collectionView?.bounds.size)!
+        
+        minimumInteritemSpacing = 0
+        
+        minimumLineSpacing = 0
+        
+        scrollDirection = UICollectionViewScrollDirection.Horizontal
+        
+        collectionView?.pagingEnabled = true
+        
+        collectionView?.bounces = false
+        
+        collectionView?.showsHorizontalScrollIndicator = false
+    }
     
-
 }

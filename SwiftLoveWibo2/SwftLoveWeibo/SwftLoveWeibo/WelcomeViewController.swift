@@ -8,8 +8,6 @@
 
 import UIKit
 
-import SDWebImage
-
 class WelcomeViewController: UIViewController {
     
     
@@ -26,55 +24,7 @@ class WelcomeViewController: UIViewController {
         
         setupUI()
         
-        if  let account = UserAccount.loadAccount() {
-            
-            account.loadUserInfo( { (account, error) -> () in
-                
-                if account != nil && error == nil {
-                    
-                    if let imageURLString = account!.avatar_large {
-                        
-                        if let imageURL = NSURL(string: imageURLString) {
-                            
-                            let request = NSURLRequest(URL: imageURL)
-                            
-                            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-                            
-                            let task = session.dataTaskWithRequest(request, completionHandler: { [ unowned self ] (data, response, error) -> Void in
-                                
-                                if response != nil {
-                                    
-                                    if (response as! NSHTTPURLResponse).statusCode == 200 {
-                                        
-                                        
-                                        
-                                        if let data = data {
-                                            
-                                            dispatch_async(dispatch_get_main_queue(), {  () -> Void in
-                                                
-                                                    self.iconView.image = UIImage(data: data)
-                                                
-                                                })
-                                            
-                                        }
-                                        
-                                    }
-                                    
-                                }
-                                
-                            })
-                            
-                            task.resume()
-                            
-                        }
-                        
-                    }
-                
-                }
-            
-            })
         
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -83,7 +33,16 @@ class WelcomeViewController: UIViewController {
         
         iconBottomCons!.constant = -UIScreen.mainScreen().bounds.height - iconBottomCons!.constant
         
+        //setObject(self.avatar_large, forKey: "userAvatar_large")
+        
+        if let imageURLString = NSUserDefaults.standardUserDefaults().objectForKey("userAvatar_large") as? String {
+        
+            self.iconView.setJYImageWithURL(imageURLString)
+        }
+        
         UIView.animateWithDuration(1.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 100, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+            
+            
             
             self.iconView.layoutIfNeeded()
             
@@ -94,6 +53,7 @@ class WelcomeViewController: UIViewController {
                     self.message.alpha = 1.0
                     
                     self.message.textColor = UIColor.orangeColor()
+                    
                     
                     }, completion: { (finish) -> Void in
                         

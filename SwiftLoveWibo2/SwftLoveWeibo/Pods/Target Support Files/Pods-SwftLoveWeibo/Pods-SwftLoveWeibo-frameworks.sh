@@ -85,11 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-SwftLoveWeibo/Alamofire.framework"
-  install_framework "Pods-SwftLoveWeibo/SDWebImage.framework"
   install_framework "Pods-SwftLoveWeibo/SVProgressHUD.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-SwftLoveWeibo/Alamofire.framework"
-  install_framework "Pods-SwftLoveWeibo/SDWebImage.framework"
   install_framework "Pods-SwftLoveWeibo/SVProgressHUD.framework"
 fi

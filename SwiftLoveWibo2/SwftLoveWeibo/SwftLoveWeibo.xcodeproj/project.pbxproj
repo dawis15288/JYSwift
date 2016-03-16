@@ -24,9 +24,23 @@
 		5C5CE5E51C65A9520051C36F /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CE5E41C65A9520051C36F /* DiscoverViewController.swift */; };
 		5C5CE5E71C65A97F0051C36F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CE5E61C65A97F0051C36F /* ProfileViewController.swift */; };
 		5C5CE5E91C65ABB70051C36F /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C5CE5E81C65ABB70051C36F /* MainVCSettings.json */; };
-		5C5CE5EB1C65EC5F0051C36F /* JYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CE5EA1C65EC5F0051C36F /* JYTableViewCell.swift */; };
-		5C5CE5ED1C65EC770051C36F /* JYTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C5CE5EC1C65EC770051C36F /* JYTableViewCell.xib */; };
+		5C639A111C95AA0B0038B0DA /* PopoverAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C639A101C95AA0B0038B0DA /* PopoverAnimation.swift */; };
+		5C639A131C95ADED0038B0DA /* ScanCategroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C639A121C95ADED0038B0DA /* ScanCategroy.swift */; };
+		5C639A151C95AE590038B0DA /* HomCategroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C639A141C95AE590038B0DA /* HomCategroy.swift */; };
+		5C639A171C9657530038B0DA /* ImageCategroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C639A161C9657530038B0DA /* ImageCategroy.swift */; };
+		5C6D75001C91385F001C71EE /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D74FF1C91385F001C71EE /* StatusPictureView.swift */; };
+		5C6D75021C914F73001C71EE /* StatusTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75011C914F73001C71EE /* StatusTopView.swift */; };
+		5C6D75041C91534F001C71EE /* StatusBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75031C91534F001C71EE /* StatusBottomView.swift */; };
+		5C6D75061C915F8A001C71EE /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75051C915F8A001C71EE /* UIButton+Category.swift */; };
+		5C6D75081C9165E4001C71EE /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75071C9165E4001C71EE /* StatusNormalCell.swift */; };
+		5C6D750A1C9166A4001C71EE /* UILabl+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75091C9166A4001C71EE /* UILabl+Category.swift */; };
+		5C71EA5A1C94307C00B0B77D /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C71EA591C94307C00B0B77D /* Popover.storyboard */; };
+		5C7605591C943D270067243E /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7605581C943D270067243E /* PopoverPresentationController.swift */; };
+		5C76055B1C9456BF0067243E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76055A1C9456BF0067243E /* PopoverViewController.swift */; };
+		5C76055D1C945EDB0067243E /* Scan.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C76055C1C945EDB0067243E /* Scan.storyboard */; };
+		5C76055F1C94607A0067243E /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C76055E1C94607A0067243E /* ScanViewController.swift */; };
 		5C7AF71B1C8C08D2007D989B /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AF71A1C8C08D2007D989B /* NewFeatureViewController.swift */; };
+		5C93C77A1C99094B009C2A96 /* StrngCatgpry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93C7791C99094B009C2A96 /* StrngCatgpry.swift */; };
 		5CA1AB6C1C8E7225002BA7D8 /* HSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA1AB6B1C8E7225002BA7D8 /* HSDate+Category.swift */; };
 		5CB7B8781C71CBFE00E23698 /* UIImageView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B8771C71CBFE00E23698 /* UIImageView+Category.swift */; };
 		5CBD6FC91C46617300926A93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD6FC81C46617300926A93 /* AppDelegate.swift */; };
@@ -48,6 +62,9 @@
 		5CBD70011C46659100926A93 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBD70001C46659100926A93 /* libz.tbd */; };
 		5CBD70031C4665B900926A93 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBD70021C4665B900926A93 /* libsqlite3.tbd */; };
 		5CBD70051C466AF600926A93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CBD70041C466AF600926A93 /* Default-568h@2x.png */; };
+		5CCDB3F11C96734B00507BAC /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB3F01C96734B00507BAC /* QRCodeViewController.swift */; };
+		5CCDB3F31C96AA5400507BAC /* QRCodViewControllerCatgroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB3F21C96AA5400507BAC /* QRCodViewControllerCatgroy.swift */; };
+		5CCEA11F1C9957010080CF34 /* NewFeatureViewControllerCatery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEA11E1C9957010080CF34 /* NewFeatureViewControllerCatery.swift */; };
 		5CE193121C8C180500EA3E70 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE193111C8C180500EA3E70 /* WelcomeViewController.swift */; };
 		5CE193141C8C5C5900EA3E70 /* NewfeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE193131C8C5C5900EA3E70 /* NewfeatureCell.swift */; };
 		5CE193161C8C5D1400EA3E70 /* JYFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE193151C8C5D1400EA3E70 /* JYFlowLayout.swift */; };
@@ -76,9 +93,23 @@
 		5C5CE5E41C65A9520051C36F /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		5C5CE5E61C65A97F0051C36F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C5CE5E81C65ABB70051C36F /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
-		5C5CE5EA1C65EC5F0051C36F /* JYTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYTableViewCell.swift; sourceTree = "<group>"; };
-		5C5CE5EC1C65EC770051C36F /* JYTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYTableViewCell.xib; sourceTree = "<group>"; };
+		5C639A101C95AA0B0038B0DA /* PopoverAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimation.swift; sourceTree = "<group>"; };
+		5C639A121C95ADED0038B0DA /* ScanCategroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCategroy.swift; sourceTree = "<group>"; };
+		5C639A141C95AE590038B0DA /* HomCategroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomCategroy.swift; sourceTree = "<group>"; };
+		5C639A161C9657530038B0DA /* ImageCategroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCategroy.swift; sourceTree = "<group>"; };
+		5C6D74FF1C91385F001C71EE /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
+		5C6D75011C914F73001C71EE /* StatusTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTopView.swift; sourceTree = "<group>"; };
+		5C6D75031C91534F001C71EE /* StatusBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBottomView.swift; sourceTree = "<group>"; };
+		5C6D75051C915F8A001C71EE /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
+		5C6D75071C9165E4001C71EE /* StatusNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
+		5C6D75091C9166A4001C71EE /* UILabl+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabl+Category.swift"; sourceTree = "<group>"; };
+		5C71EA591C94307C00B0B77D /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
+		5C7605581C943D270067243E /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
+		5C76055A1C9456BF0067243E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		5C76055C1C945EDB0067243E /* Scan.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Scan.storyboard; sourceTree = "<group>"; };
+		5C76055E1C94607A0067243E /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		5C7AF71A1C8C08D2007D989B /* NewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
+		5C93C7791C99094B009C2A96 /* StrngCatgpry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrngCatgpry.swift; sourceTree = "<group>"; };
 		5CA1AB6B1C8E7225002BA7D8 /* HSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HSDate+Category.swift"; sourceTree = "<group>"; };
 		5CB7B8771C71CBFE00E23698 /* UIImageView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Category.swift"; sourceTree = "<group>"; };
 		5CBD6FC51C46617300926A93 /* SwftLoveWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwftLoveWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +144,9 @@
 		5CBD70001C46659100926A93 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		5CBD70021C4665B900926A93 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5CBD70041C466AF600926A93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5CCDB3F01C96734B00507BAC /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		5CCDB3F21C96AA5400507BAC /* QRCodViewControllerCatgroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodViewControllerCatgroy.swift; sourceTree = "<group>"; };
+		5CCEA11E1C9957010080CF34 /* NewFeatureViewControllerCatery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewControllerCatery.swift; sourceTree = "<group>"; };
 		5CE193111C8C180500EA3E70 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		5CE193131C8C5C5900EA3E70 /* NewfeatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCell.swift; sourceTree = "<group>"; };
 		5CE193151C8C5D1400EA3E70 /* JYFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYFlowLayout.swift; sourceTree = "<group>"; };
@@ -185,10 +219,17 @@
 		5C5BB0B91C704E0F006FF278 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5CCDB3EF1C96732C00507BAC /* SCanQRCode */,
+				5C71EA581C94305F00B0B77D /* Popover */,
 				5C5CE5E01C65A38B0051C36F /* HomeViewController.swift */,
 				5CE193171C8C619E00EA3E70 /* Status.swift */,
 				5CE193191C8DBC9800EA3E70 /* User.swift */,
 				5CE1931B1C8DBFBF00EA3E70 /* StatusTableViewCell.swift */,
+				5C6D74FF1C91385F001C71EE /* StatusPictureView.swift */,
+				5C6D75011C914F73001C71EE /* StatusTopView.swift */,
+				5C6D75031C91534F001C71EE /* StatusBottomView.swift */,
+				5C6D75071C9165E4001C71EE /* StatusNormalCell.swift */,
+				5C639A141C95AE590038B0DA /* HomCategroy.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -242,8 +283,6 @@
 			children = (
 				5C2DDA431C6854DB0041D732 /* UIView+AutoLayout.swift */,
 				5C5BB0B61C704713006FF278 /* UIBarButtonItem+Category.swift */,
-				5C5CE5EA1C65EC5F0051C36F /* JYTableViewCell.swift */,
-				5C5CE5EC1C65EC770051C36F /* JYTableViewCell.xib */,
 				5CBD6FEB1C4663E300926A93 /* SwftLoveWeibo-Bridging-Header.h */,
 				5C5A57CC1C47DD9600382E5E /* SwiftyJSON.swift */,
 				5CEBECB81C47326B00F50EBC /* WebViewController.swift */,
@@ -252,8 +291,26 @@
 				5C5BB0C21C705574006FF278 /* JYPopoverViewController.swift */,
 				5CB7B8771C71CBFE00E23698 /* UIImageView+Category.swift */,
 				5CA1AB6B1C8E7225002BA7D8 /* HSDate+Category.swift */,
+				5C6D75051C915F8A001C71EE /* UIButton+Category.swift */,
+				5C6D75091C9166A4001C71EE /* UILabl+Category.swift */,
+				5C639A161C9657530038B0DA /* ImageCategroy.swift */,
+				5C93C7791C99094B009C2A96 /* StrngCatgpry.swift */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		5C71EA581C94305F00B0B77D /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				5C71EA591C94307C00B0B77D /* Popover.storyboard */,
+				5C7605581C943D270067243E /* PopoverPresentationController.swift */,
+				5C76055A1C9456BF0067243E /* PopoverViewController.swift */,
+				5C76055C1C945EDB0067243E /* Scan.storyboard */,
+				5C76055E1C94607A0067243E /* ScanViewController.swift */,
+				5C639A101C95AA0B0038B0DA /* PopoverAnimation.swift */,
+				5C639A121C95ADED0038B0DA /* ScanCategroy.swift */,
+			);
+			name = Popover;
 			sourceTree = "<group>";
 		};
 		5C7AF7191C8C089C007D989B /* NewFature */ = {
@@ -263,6 +320,7 @@
 				5CE193111C8C180500EA3E70 /* WelcomeViewController.swift */,
 				5CE193131C8C5C5900EA3E70 /* NewfeatureCell.swift */,
 				5CE193151C8C5D1400EA3E70 /* JYFlowLayout.swift */,
+				5CCEA11E1C9957010080CF34 /* NewFeatureViewControllerCatery.swift */,
 			);
 			name = NewFature;
 			sourceTree = "<group>";
@@ -339,6 +397,15 @@
 			name = WeiboSDK;
 			sourceTree = "<group>";
 		};
+		5CCDB3EF1C96732C00507BAC /* SCanQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				5CCDB3F01C96734B00507BAC /* QRCodeViewController.swift */,
+				5CCDB3F21C96AA5400507BAC /* QRCodViewControllerCatgroy.swift */,
+			);
+			name = SCanQRCode;
+			sourceTree = "<group>";
+		};
 		6B436C4C70F750922DEF1B84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,11 +476,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C76055D1C945EDB0067243E /* Scan.storyboard in Resources */,
 				5CBD6FD31C46617300926A93 /* LaunchScreen.storyboard in Resources */,
 				5CBD6FD01C46617300926A93 /* Assets.xcassets in Resources */,
 				5C5CE5E91C65ABB70051C36F /* MainVCSettings.json in Resources */,
+				5C71EA5A1C94307C00B0B77D /* Popover.storyboard in Resources */,
 				5CBD6FCE1C46617300926A93 /* Main.storyboard in Resources */,
-				5C5CE5ED1C65EC770051C36F /* JYTableViewCell.xib in Resources */,
 				5CBD70051C466AF600926A93 /* Default-568h@2x.png in Resources */,
 				5CBD6FEA1C46638A00926A93 /* WeiboSDK.bundle in Resources */,
 			);
@@ -479,27 +547,43 @@
 				5C2DDA3C1C681ECC0041D732 /* NullViewController.swift in Sources */,
 				5CE1931C1C8DBFBF00EA3E70 /* StatusTableViewCell.swift in Sources */,
 				5CBD6FCB1C46617300926A93 /* ViewController.swift in Sources */,
+				5C6D75041C91534F001C71EE /* StatusBottomView.swift in Sources */,
+				5C639A151C95AE590038B0DA /* HomCategroy.swift in Sources */,
+				5C7605591C943D270067243E /* PopoverPresentationController.swift in Sources */,
 				5C7AF71B1C8C08D2007D989B /* NewFeatureViewController.swift in Sources */,
+				5CCEA11F1C9957010080CF34 /* NewFeatureViewControllerCatery.swift in Sources */,
+				5C93C77A1C99094B009C2A96 /* StrngCatgpry.swift in Sources */,
+				5C639A171C9657530038B0DA /* ImageCategroy.swift in Sources */,
+				5C76055F1C94607A0067243E /* ScanViewController.swift in Sources */,
 				5CE1931A1C8DBC9800EA3E70 /* User.swift in Sources */,
+				5CCDB3F11C96734B00507BAC /* QRCodeViewController.swift in Sources */,
+				5CCDB3F31C96AA5400507BAC /* QRCodViewControllerCatgroy.swift in Sources */,
+				5C6D750A1C9166A4001C71EE /* UILabl+Category.swift in Sources */,
 				5CE193141C8C5C5900EA3E70 /* NewfeatureCell.swift in Sources */,
 				5CE193121C8C180500EA3E70 /* WelcomeViewController.swift in Sources */,
 				5CE193161C8C5D1400EA3E70 /* JYFlowLayout.swift in Sources */,
+				5C639A131C95ADED0038B0DA /* ScanCategroy.swift in Sources */,
 				5CA1AB6C1C8E7225002BA7D8 /* HSDate+Category.swift in Sources */,
+				5C6D75001C91385F001C71EE /* StatusPictureView.swift in Sources */,
 				5C2B8F021C8BBD3C00CBEDA1 /* OAuthViewController.swift in Sources */,
+				5C76055B1C9456BF0067243E /* PopoverViewController.swift in Sources */,
 				5CE193181C8C619E00EA3E70 /* Status.swift in Sources */,
+				5C6D75021C914F73001C71EE /* StatusTopView.swift in Sources */,
 				5C5CE5E71C65A97F0051C36F /* ProfileViewController.swift in Sources */,
 				5C5A57CF1C47E79800382E5E /* WeiboModal.swift in Sources */,
+				5C6D75081C9165E4001C71EE /* StatusNormalCell.swift in Sources */,
 				5C2DDA401C6834D40041D732 /* BaseViewController.swift in Sources */,
 				5C5CE5E31C65A9160051C36F /* MessageViewController.swift in Sources */,
 				5CEBECB91C47326B00F50EBC /* WebViewController.swift in Sources */,
 				5C2DDA3E1C6822DD0041D732 /* VisitorView.swift in Sources */,
 				5C5BB0C11C7052A7006FF278 /* TitleButton.swift in Sources */,
-				5C5CE5EB1C65EC5F0051C36F /* JYTableViewCell.swift in Sources */,
 				5CB7B8781C71CBFE00E23698 /* UIImageView+Category.swift in Sources */,
+				5C6D75061C915F8A001C71EE /* UIButton+Category.swift in Sources */,
 				5C2DDA441C6854DB0041D732 /* UIView+AutoLayout.swift in Sources */,
 				5C5CE5DF1C65A1930051C36F /* MainViewController.swift in Sources */,
 				5CBD6FC91C46617300926A93 /* AppDelegate.swift in Sources */,
 				5C5CE5E11C65A38B0051C36F /* HomeViewController.swift in Sources */,
+				5C639A111C95AA0B0038B0DA /* PopoverAnimation.swift in Sources */,
 				5C5A57CD1C47DD9600382E5E /* SwiftyJSON.swift in Sources */,
 				5C5BB0C31C705574006FF278 /* JYPopoverViewController.swift in Sources */,
 				5C2B8F041C8BE1D100CBEDA1 /* UserAccount.swift in Sources */,

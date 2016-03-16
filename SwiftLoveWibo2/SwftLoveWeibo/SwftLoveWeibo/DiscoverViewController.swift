@@ -12,41 +12,34 @@ class DiscoverViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let JYCell = UINib(nibName: "JYTableViewCell", bundle: nil)
-        
-        tableView.registerNib(JYCell, forCellReuseIdentifier: "JYCell")
-        
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 1
+        let label = UITextField(frame: CGRectZero)
         
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        label.translatesAutoresizingMaskIntoConstraints = false
         
-        return 10
+        label.text = "label"
         
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        label.backgroundColor = UIColor.clearColor()
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("JYCell", forIndexPath: indexPath) as! JYTableViewCell
+        label.selected = false
         
-        cell.namelabel.text = "cyin"
+        let textFild = UITextField(frame: CGRectZero)
         
-        cell.contentLabel.text = "cyin"
+        textFild.translatesAutoresizingMaskIntoConstraints = false
         
-        return cell
+        view.addSubview(label)
+        
+        view.addSubview(textFild)
+        
+        let horizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[label]-[textField(>=100)]-|", options: .AlignAllBaseline, metrics: nil, views: ["label": label, "textField": textFild])
+        
+        NSLayoutConstraint.activateConstraints(horizontalConstraints)
+        
+        let verticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|-[textField]-|", options: .AlignAllCenterX, metrics: nil, views: ["textField": textFild])
+        
+        NSLayoutConstraint.activateConstraints(verticalConstraints)
         
     }
     

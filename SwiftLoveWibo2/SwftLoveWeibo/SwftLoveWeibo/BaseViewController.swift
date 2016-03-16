@@ -12,16 +12,18 @@ class BaseViewController: UITableViewController, VisitorViewDelegate {
     
     //@IBOutlet weak var messageLabel: UILabel!
     
-    var account = UserAccount.loadAccount()
+    let account = UserAccount.loadAccount()
     
-    var login: Bool = UserAccount.userLogin()
+    let login: Bool = UserAccount.userLogin()
     
     
     var visitorView: VisitorView?
     
     override func loadView() {
         
-        //account!.loadUserInfo()
+        
+        
+        print("override func loadView() {account!.loadUserInfo:\(account?.name)\n\n\n")
         
         login ? super.loadView() : setupVisitor()
         
