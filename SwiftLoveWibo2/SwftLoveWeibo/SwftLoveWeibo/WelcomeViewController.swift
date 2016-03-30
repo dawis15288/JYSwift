@@ -16,11 +16,7 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
-        /*
-        
-        */
+       
         
         setupUI()
         
@@ -32,18 +28,10 @@ class WelcomeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         iconBottomCons!.constant = -UIScreen.mainScreen().bounds.height - iconBottomCons!.constant
+ 
         
-        //setObject(self.avatar_large, forKey: "userAvatar_large")
-        
-        if let imageURLString = NSUserDefaults.standardUserDefaults().objectForKey("userAvatar_large") as? String {
-        
-            self.iconView.setJYImageWithURL(imageURLString)
-        }
-        
-        UIView.animateWithDuration(1.2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 100, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
-            
-            
-            
+        UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 3, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
+     
             self.iconView.layoutIfNeeded()
             
             }, completion: { (finish) -> Void in
@@ -73,6 +61,8 @@ class WelcomeViewController: UIViewController {
         
         iv.layer.masksToBounds = true
         
+        
+        
         return iv
         
     }()
@@ -81,7 +71,12 @@ class WelcomeViewController: UIViewController {
         
         let lable = UILabel()
         
-        lable.text = "欢迎回来"
+        if let userName = UserAccount.loadAccount()?.name {
+            
+            lable.text = "欢迎\(userName)回来"
+        }
+        
+        
         
         lable.sizeToFit()
         
@@ -109,7 +104,10 @@ class WelcomeViewController: UIViewController {
         
         message.JY_AlignInner(type: JY_AlignType.BottomCenter, referView: iconView, size: nil, offset: CGPoint(x: 0, y: 40))
         
-        
+        if let imageURLString = NSUserDefaults.standardUserDefaults().objectForKey("userAvatar_large") as? String {
+            
+            self.iconView.setJYImageWithURL(imageURLString)
+        }
         
     }
 

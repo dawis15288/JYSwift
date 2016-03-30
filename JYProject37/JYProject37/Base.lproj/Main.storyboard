@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JYProject37" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ytl-Bp-G3u" customClass="GradientView" customModule="JYProject37" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HtP-AO-wVS">
+                                        <rect key="frame" x="66" y="140" width="480" height="320"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="76V-D0-APx"/>
+                                            <constraint firstAttribute="width" constant="480" id="nuO-N6-eB3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="HtP-AO-wVS" firstAttribute="leading" secondItem="ytl-Bp-G3u" secondAttribute="leading" constant="66" id="muS-Vc-3Fd"/>
+                                    <constraint firstItem="HtP-AO-wVS" firstAttribute="centerY" secondItem="ytl-Bp-G3u" secondAttribute="centerY" id="tF6-nV-nsj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ytl-Bp-G3u" secondAttribute="trailing" id="5hD-hp-jkU"/>
+                            <constraint firstItem="ytl-Bp-G3u" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="AcL-UU-ia0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ytl-Bp-G3u" secondAttribute="bottom" id="Bn3-UY-bAE"/>
+                            <constraint firstItem="ytl-Bp-G3u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GOy-ax-94A"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardContainer" destination="HtP-AO-wVS" id="5fK-67-i0R"/>
+                        <outlet property="gradientView" destination="ytl-Bp-G3u" id="O25-Fu-8P1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-90" y="314"/>
+        </scene>
+    </scenes>
+</document>

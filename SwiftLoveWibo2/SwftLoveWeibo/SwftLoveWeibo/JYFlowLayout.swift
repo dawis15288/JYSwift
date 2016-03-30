@@ -20,7 +20,7 @@ class JYFlowLayout: UICollectionViewFlowLayout {
         
         scrollDirection = UICollectionViewScrollDirection.Horizontal
         
-        collectionView?.pagingEnabled = true
+       collectionView?.pagingEnabled = true
         
         collectionView?.bounces = false
         

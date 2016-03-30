@@ -19,8 +19,13 @@ class User: NSObject {
     var profile_image_url: String? {
         
         didSet {
+            
+            if let url = profile_image_url {
+            
+                imageURL = NSURL(string: url)
+            }
         
-            imageURL = NSURL(string: profile_image_url!)!
+            
         }
     
     }
@@ -43,7 +48,7 @@ class User: NSObject {
         
         }
     }
-    
+    //kvc基本数据类型要哦初始化否则不会分配空间
     var mbrank: Int = -1
     
     var membrImage: UIImage? {

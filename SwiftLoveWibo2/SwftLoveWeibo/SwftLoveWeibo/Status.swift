@@ -10,6 +10,10 @@ import UIKit
 
 import SDWebImage
 
+import SVProgressHUD
+
+import Alamofire
+
 class Status: NSObject {
     
     var created_at: String? {
@@ -26,14 +30,11 @@ class Status: NSObject {
                 
                 let date = formattr.dateFromString(time)
                 
-                print(date?.dateDesctiption)
-                
                 created_at = "\(date!.dateDesctiption)"
                 
                 if let date = NSDate.sinaDate(time) {
                 
                     created_at = date.dateDesctiption
-                    print("created_at\(date.dateDesctiption)\n\n------>")
                     
                 }
 
@@ -90,11 +91,13 @@ class Status: NSObject {
     
     var stordPictureURLs: [NSURL]?
     
+    var stordLagrePictureURLs: [NSURL]?
+    
     var pic_urls: [[String: AnyObject]]? {
         
         didSet {
             
-            print("var pic_urls: [[String: AnyObject]]?------->\(pic_urls)")
+            
             
             if pic_urls?.count == 0 {
                 
@@ -104,15 +107,17 @@ class Status: NSObject {
             
             stordPictureURLs = [NSURL]()
             
+            stordLagrePictureURLs = [NSURL]()
+            
             for dicts in pic_urls! {
                 
                 if let urlString = dicts["thumbnail_pic"] as? String {
                     
-                    print("if let urlString = dicts as? String {\(urlString)")
-                    
                     stordPictureURLs?.append(NSURL(string: urlString)!)
                     
-                
+                    let largeURLs = urlString.stringByReplacingOccurrencesOfString("thumbnail", withString: "large")
+                    
+                    stordLagrePictureURLs?.append(NSURL(string: largeURLs)!)
                 }
             
             }
@@ -122,6 +127,39 @@ class Status: NSObject {
     
     
     var user: User?
+    
+    /*reposts_count	int	转发数
+    comments_count	int	评论数
+    attitudes_count	int	表态数*/
+    
+    var repostsCount: Int?
+    
+    var commentsCount: Int?
+    
+    var attitudesCount: Int?
+    
+    var retweeted_Status: Status? {
+        
+        didSet {
+            
+            
+        
+        }
+    
+    }
+    
+    var repic_urls: [NSURL]? {
+        
+        
+        
+        return retweeted_Status != nil ? retweeted_Status?.stordPictureURLs : stordPictureURLs
+    
+    }
+    
+    var LargePictrueURLs: [NSURL]? {
+    
+        return retweeted_Status != nil ? retweeted_Status?.stordLagrePictureURLs : stordLagrePictureURLs
+    }
     
     static let properties = ["created_at", "id", "text", "source", "pic_urls", "user"]
     
@@ -133,34 +171,43 @@ class Status: NSObject {
         
     }
     
-    private class func cacheWbImage(list: [Status] ) {
-    
+    private class func cacheWbImage(list: [Status], completedhandler: ((modules: [Status]?, error: NSError?) -> Void)? ) {
+        
+        if list.count == 0 {
+        
+            completedhandler!(modules: list, error: nil)
+            
+            return
+            
+        }
         
         let group = dispatch_group_create()
         
         for status in list {
             
-            guard let _ = status.stordPictureURLs else { continue }
             
-            for url in status.stordPictureURLs! {
+            
+            //guard let _ = status.stordPictureURLs else { continue }
+            
+           if let urlArray = status.repic_urls {
                 
-                dispatch_group_enter(group)
-                
-                SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions.RefreshCached, progress: nil, completed: { (_, _, _, _, _) -> Void in
+                for url in urlArray {
                     
-                    print(SDWebImageOptions.RefreshCached.rawValue)
-                
-                    dispatch_group_leave(group)
+                    dispatch_group_enter(group)
                     
-                })
+                    SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (_, _, _, _, _) -> Void in
+                        
+                        dispatch_group_leave(group)
+                        
+                    })
+                    
+                }
             
             }
             
             dispatch_group_notify(group, dispatch_get_main_queue(), { () -> Void in
                 
-                //completedhandler(statues: list, error: nil)
-                
-                print("cacheWbImage已经成功")
+                completedhandler!(modules: list, error: nil)
             
             })
         
@@ -176,14 +223,29 @@ class Status: NSObject {
     
     override func setValue(value: AnyObject?, forKey key: String) {
         
-        if key == "user" {
+        if "user" == key {
             
             if let dict = value as? [String: AnyObject] {
+                
                 
                 user = User(dict: dict)
             }
             
             return
+        }
+        
+        if "retweeted_status" == key {
+            
+            if let dict = value as? [String: AnyObject] {
+                
+                retweeted_Status = Status(dict: dict)
+                
+                
+            
+            }
+            
+            return
+        
         }
         
         super.setValue(value, forKey: key)
@@ -202,13 +264,60 @@ class Status: NSObject {
         return models
     }
     
-    class func loadStatuses(page: Int, weiboAccessToken: String, completeionHandler: ((statuses: [Status]?, error: NSError?) -> Void)) {
+    class func loadStatuses(since_id: Int, max_id: Int ,weiboAccessToken: String, completeionHandler: ((statuses: [Status]?, error: NSError?) -> Void)) {
         
-        dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in
+        
+        
+        //dispatch_async(dispatch_get_global_queue(0, 0)) { () -> Void in
             
-            let urlStr = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=\(weiboAccessToken)&count=50&page=\(page)&base_app=0&feature=0&trim_user=0"
+           // let urlStr = "https://api.weibo.com/2/statuses/friends_timeline.json?access_token=\(weiboAccessToken)&count=50&page=\(page)&base_app=0&feature=0&trim_user=0"
             
-            let request = NSURLRequest(URL: NSURL(string: urlStr)!)
+            var homeURL = "https://api.weibo.com/2/statuses/home_timeline.json?access_token=\(weiboAccessToken)"
+            
+            if since_id > 0 {
+                
+                homeURL = "\(homeURL)&since_id=\(since_id)"
+            
+            }
+            
+            if max_id > 0 {
+                
+                //为了避免获取到重复的微博数据 max_id - 1
+                
+                let maxID = max_id - 1
+                
+                homeURL = "\(homeURL)&max_id=\(maxID)"
+            
+            }
+            
+        Alamofire.request(.GET, homeURL).responseJSON(completionHandler: { (response) -> Void in
+            
+            if response.result.isSuccess {
+                
+                if let dataJSON = response.result.value {
+                    
+                    if let moduels = dataJSON["statuses"] as? [[String: AnyObject]] {
+                        
+                        
+                        let statuses = self.status(moduels)
+                        
+                        cacheWbImage(statuses,completedhandler: completeionHandler)
+                        
+                        //completeionHandler(statuses: statuses, error: nil)
+                        
+                    }
+                    
+                }
+            
+            } else {
+                
+                completeionHandler(statuses: nil, error: response.result.error)
+            
+            }
+            
+            })
+            
+            /*let request = NSURLRequest(URL: NSURL(string: homeURL)!)
             
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
             
@@ -224,11 +333,12 @@ class Status: NSObject {
                             
                             if let moduels = dataJSON["statuses"] as? [[String: AnyObject]] {
                                 
-                               // print("获取到的图片的url\(moduels[0])")
-                            
+                                
                                 let statuses = self.status(moduels)
                                 
-                                completeionHandler(statuses: statuses, error: nil)
+                                cacheWbImage(statuses,completedhandler: completeionHandler)
+                                
+                                //completeionHandler(statuses: statuses, error: nil)
                             
                             }
                             
@@ -238,14 +348,52 @@ class Status: NSObject {
                     
                     
                     }
+                } else {
+                    
+                    completeionHandler(statuses: nil, error: error)
+                    
                 }
             
+            })
+            
+            task.resume()*/
+            
+       // }
+        
+        
+    }
+    
+    class func loadWeiboCommtents() {
+        
+        let url = "https://api.weibo.com/2/comments/show.json?access_token=2.009IxytBQHYE2Be1507ea6650oRSXl&id=3955785995922241"
+        
+        if let comententURL = NSURL(string: url) {
+            
+            let request = NSURLRequest(URL: comententURL)
+            
+            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+            
+            let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+                
+                if let data = data {
+                    
+                    do {
+                        
+                        //let cmtentensJSON = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
+                        
+                        //let array = cmtentensJSON["comments"] as? [[String: AnyObject]]
+                        
+                        //print("获取大的评论是+++++++\(array!)+++++")
+                        
+                    } catch {}
+                    
+                }
+                
             })
             
             task.resume()
             
         }
-        
         
     }
 

@@ -8,6 +8,14 @@
 
 import UIKit
 
+import SDWebImage
+
+let JYShowWeiboPictrue = "showWeiboPictrue"
+
+let JYShowWeiboPictrueIndex = "showWeiboPictrueIndex"
+
+let JYShowWeiboPictrueURLs = "showWeiboPictrueURLs"
+
 class StatusPictureView: UICollectionView {
 
     private lazy var iconView = UIImageView()
@@ -25,7 +33,9 @@ class StatusPictureView: UICollectionView {
     
     override func sizeThatFits(size: CGSize) -> CGSize {
         
-        return calculateImageSize()
+        let size = calculateImageSize().itemSize
+        
+        return size
     }
     
     private var pictureLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -39,13 +49,15 @@ class StatusPictureView: UICollectionView {
         
         dataSource = self
         
+        delegate = self
+        
         backgroundColor = UIColor.lightGrayColor()
         
-        pictureLayout.minimumInteritemSpacing = 2
+        pictureLayout.minimumInteritemSpacing = 1
         
-        pictureLayout.minimumLineSpacing = 2
+        pictureLayout.minimumLineSpacing = 1
         
-        backgroundColor = UIColor.darkGrayColor()
+        backgroundColor = UIColor.clearColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,96 +67,67 @@ class StatusPictureView: UICollectionView {
     
     // MARK: -处理微博中的图片
     
-    func calculateImageSize() -> CGSize {
+    func calculateImageSize() -> (viewSize: CGSize, itemSize: CGSize) {
         
-        if let count = status?.stordPictureURLs?.count {
+        let count = status?.stordPictureURLs?.count //{
         
-            if count == 0 {
+        if count == 0 || count == nil {
             
-                return CGSizeZero
+            return (CGSize(width: 1, height: 1), CGSize(width: 1, height: 1))
             
-            }
-        
-            let width = 45
-        
-            let margin = 5
-        
-            pictureLayout.itemSize = CGSize(width: width, height: width)
-        
-            if count == 4 {
-            
-                let viewWidth = width * 2 + margin
-            
-                return CGSize(width: viewWidth, height: viewWidth)
-            
-            
-            }
-        
-            let colCount = 3
-        
-            let rowCount = (count - 1) / 3 + 1
-        
-            let pictureWidth = colCount * width + (colCount - 1) * margin
-        
-            let pictureHeight = rowCount * width + (rowCount - 1 ) * margin
-        
-            return CGSize(width: pictureWidth, height: pictureHeight)
         }
         
-        return CGSizeZero
-    
+        /*if count == 1 {
+        
+        if let key = status?.stordPictureURLs!.first?.absoluteString {
+        
+        if let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key) {
+        
+        
+        
+        return (image.size, image.size)
+        
+        }
+        
+        return (CGSize(width: 1, height: 1), CGSize(width: 1, height: 1))
+        
+        }
+        
+        //
+        
+        }*/
+        
+        let width = 120
+        
+        let margin = 5
+        
+        pictureLayout.itemSize = CGSize(width: width, height: width)
+        
+        if count == 4 {
+            
+            let viewWidth = width * 2 + margin
+            
+            return (CGSize(width: viewWidth, height: viewWidth), CGSize(width: width, height: width))
+            
+            
+        }
+        
+        let colCount = 3
+        
+        let rowCount = (count! - 1) / 3 + 1
+        
+        let pictureWidth = colCount * width + (colCount - 1) * margin
+        
+        let pictureHeight = rowCount * width + (rowCount - 1 ) * margin
+        
+        return (CGSize(width: pictureWidth, height: pictureHeight), CGSize(width: width, height: width))
+        
+        
     }
     
-    //MARK: cell的实现
-    private class PictureViewCell: UICollectionViewCell {
-        
-        private lazy var iconView = UIImageView()
-        
-        var imageURL: NSURL? {
-            
-            didSet {
-                
-                if let imageURL = imageURL {
-                    
-                    print("UICollectionViewCell\(imageURL)")
-                    
-                    //iconView.sd_setImageWithURL(imageURL)
-                }
-                
-            }
-            
-        }
-        
-        override init(frame: CGRect) {
-            
-            super.init(frame: frame)
-            
-            setupUIs()
-            
-        }
-        
-        func setupUIs() {
-            
-            contentView.addSubview(iconView)
-            
-            iconView.JY_Fill(contentView)
-        
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            
-            fatalError("init?(coder aDecoder: NSCoder)没有实现")
-        }
-    
-    }
 }
 
-extension StatusPictureView: UICollectionViewDataSource {
-    
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        
-        return 1
-    }
+extension StatusPictureView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -153,20 +136,89 @@ extension StatusPictureView: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let itemCell = collectionView.dequeueReusableCellWithReuseIdentifier(JYPictureCellReuseIdentifier, forIndexPath: indexPath) as! PictureViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(JYPictureCellReuseIdentifier, forIndexPath: indexPath) as! PictureViewCell
         
-        //print("itemCell.imageURL = \(status?.stordPictureURLs![indexPath.row])")
-        
-        itemCell.imageURL = status?.stordPictureURLs![indexPath.row]
-        
-        if let imagURL = status?.stordPictureURLs![indexPath.row] {
+        if let imageURL = status?.stordPictureURLs![indexPath.row] {
             
-            itemCell.iconView.sd_setImageWithURL(imagURL)
+            cell.imageURL = imageURL
             
         }
         
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        NSNotificationCenter.defaultCenter().postNotificationName(JYShowWeiboPictrue, object: nil, userInfo: [JYShowWeiboPictrueIndex: indexPath, JYShowWeiboPictrueURLs: (status?.stordLagrePictureURLs!)!])
+    }
+}
+
+
+private class PictureViewCell: UICollectionViewCell {
+    
+    private lazy var iconView = UIImageView()
+    
+    private lazy var girImageView: UIImageView = {
+    
+        let imageView = UIImageView()
         
-        return itemCell
+        imageView.image = UIImage(named: "timeline_icon_like")
+        
+        imageView.hidden = true
+        
+        return imageView
+    
+    } ()
+    
+    var imageURL: NSURL? {
+        
+        didSet {
+            
+            if let imageURL = imageURL {
+                
+                let lastString = imageURL.lastPathComponent!
+                
+                let gifString = lastString.substringFromIndex(lastString.rangeOfString(".")!.endIndex)
+                
+                if "gif" == gifString {
+                    
+                    girImageView.hidden = false
+                
+                }
+                
+                
+                
+                iconView.contentMode = .ScaleAspectFit
+                
+                iconView.sd_setImageWithURL(imageURL)
+            }
+            
+        }
+        
+    }
+    
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
+        
+        setupUIs()
+        
+    }
+    
+    func setupUIs() {
+        
+        contentView.addSubview(iconView)
+        
+        contentView.addSubview(girImageView)
+        
+        iconView.xmg_Fill(contentView)
+        
+        girImageView.xmg_AlignInner(type: XMG_AlignType.BottomRight, referView: iconView, size: nil)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        
+        fatalError("init?(coder aDecoder: NSCoder)没有实现")
     }
 }

@@ -22,6 +22,8 @@ extension UIButton {
         
         button.setBackgroundImage(UIImage(named: "timeline_card_bottom_background"), forState: .Normal)
         
+        button.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
+        
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         
         return button

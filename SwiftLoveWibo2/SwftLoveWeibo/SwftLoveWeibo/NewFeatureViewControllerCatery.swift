@@ -42,9 +42,9 @@ extension NewFeatureViewController {
         
         if path.item == (imageCount - 1) {
             
-            let cell = collectionView.cellForItemAtIndexPath(path) as! NewfatureCll
+                let cell = collectionView.cellForItemAtIndexPath(path) as! NewfatureCll
             
-            cell.startAnimation()
+                cell.startAnimation()
             
         }
     }

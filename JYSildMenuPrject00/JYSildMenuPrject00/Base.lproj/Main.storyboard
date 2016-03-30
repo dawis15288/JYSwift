@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="80g-Xq-zxf">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JYSildMenuPrject00" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Mb-Qy-CSI">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="544"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2rH-qW-a7H"/>
+                                    <constraint firstAttribute="height" constant="544" id="jcp-om-1ly"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MenuCell" rowHeight="80" id="BON-FL-8pW">
+                                        <rect key="frame" x="0.0" y="92" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BON-FL-8pW" id="cgm-w1-qbE">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="715" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="acw-Jj-lIC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="8GB-L3-FAu"/>
+                                                        <constraint firstAttribute="height" constant="80" id="kOg-6B-dzO"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="acw-Jj-lIC" firstAttribute="leading" secondItem="cgm-w1-qbE" secondAttribute="leading" id="0Cb-60-MG6"/>
+                                                <constraint firstItem="acw-Jj-lIC" firstAttribute="top" secondItem="cgm-w1-qbE" secondAttribute="top" id="Dg2-Iz-ga0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="GtR-yP-tyr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="W7t-eD-qQr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="9Mb-Qy-CSI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LdQ-1S-ntQ"/>
+                            <constraint firstItem="9Mb-Qy-CSI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="i56-Fu-gxQ"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wQ4-Zw-O5R" appends="YES" id="XZA-88-i7p"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="FwH-9V-XpY">
+                        <barButtonItem key="leftBarButtonItem" title="more" id="j6R-GF-frB">
+                            <connections>
+                                <action selector="trigger:" destination="BYZ-38-t0r" id="o42-Ik-3Tf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuTableView" destination="9Mb-Qy-CSI" id="wec-gB-eGb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="wQ4-Zw-O5R">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="ZkF-PY-lk1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="435" y="260"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ys8-By-4HL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="80g-Xq-zxf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H35-5A-KQg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.14168170629999999" blue="0.37262835319999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MiT-WQ-pww"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVF-AJ-UQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66" y="284"/>
+        </scene>
+    </scenes>
+</document>

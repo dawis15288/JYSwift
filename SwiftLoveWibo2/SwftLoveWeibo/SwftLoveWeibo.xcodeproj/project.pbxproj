@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C19AF431CAA7590000CF2EC /* UIToolbarCategroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C19AF421CAA7590000CF2EC /* UIToolbarCategroy.swift */; };
 		5C2B8F021C8BBD3C00CBEDA1 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B8F011C8BBD3C00CBEDA1 /* OAuthViewController.swift */; };
 		5C2B8F041C8BE1D100CBEDA1 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2B8F031C8BE1D100CBEDA1 /* UserAccount.swift */; };
 		5C2DDA3C1C681ECC0041D732 /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA3B1C681ECC0041D732 /* NullViewController.swift */; };
 		5C2DDA3E1C6822DD0041D732 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA3D1C6822DD0041D732 /* VisitorView.swift */; };
 		5C2DDA401C6834D40041D732 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA3F1C6834D40041D732 /* BaseViewController.swift */; };
-		5C2DDA441C6854DB0041D732 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA431C6854DB0041D732 /* UIView+AutoLayout.swift */; };
+		5C2DDA441C6854DB0041D732 /* UIView+AutoLayoutjy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA431C6854DB0041D732 /* UIView+AutoLayoutjy.swift */; };
+		5C3048111CA3BC5D00A566A0 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3048101CA3BC5D00A566A0 /* ComposeViewController.swift */; };
+		5C3048131CA3FAE500A566A0 /* JYView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3048121CA3FAE500A566A0 /* JYView.swift */; };
+		5C3048151CA3FCE200A566A0 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3048141CA3FCE200A566A0 /* EmojiViewController.swift */; };
+		5C4A837D1CA1634400FB24A4 /* WeiboPictrueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A837C1CA1634400FB24A4 /* WeiboPictrueViewController.swift */; };
 		5C5A57CD1C47DD9600382E5E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5A57CC1C47DD9600382E5E /* SwiftyJSON.swift */; };
 		5C5A57CF1C47E79800382E5E /* WeiboModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5A57CE1C47E79800382E5E /* WeiboModal.swift */; };
 		5C5BB0B71C704713006FF278 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BB0B61C704713006FF278 /* UIBarButtonItem+Category.swift */; };
 		5C5BB0C11C7052A7006FF278 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BB0C01C7052A7006FF278 /* TitleButton.swift */; };
 		5C5BB0C31C705574006FF278 /* JYPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BB0C21C705574006FF278 /* JYPopoverViewController.swift */; };
+		5C5C921C1CA17E86007B68CA /* PctrueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5C921B1CA17E86007B68CA /* PctrueCell.swift */; };
 		5C5CE5DF1C65A1930051C36F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CE5DE1C65A1930051C36F /* MainViewController.swift */; };
 		5C5CE5E11C65A38B0051C36F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CE5E01C65A38B0051C36F /* HomeViewController.swift */; };
 		5C5CE5E31C65A9160051C36F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5CE5E21C65A9160051C36F /* MessageViewController.swift */; };
@@ -28,11 +34,16 @@
 		5C639A131C95ADED0038B0DA /* ScanCategroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C639A121C95ADED0038B0DA /* ScanCategroy.swift */; };
 		5C639A151C95AE590038B0DA /* HomCategroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C639A141C95AE590038B0DA /* HomCategroy.swift */; };
 		5C639A171C9657530038B0DA /* ImageCategroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C639A161C9657530038B0DA /* ImageCategroy.swift */; };
+		5C6661661CA6213A004BA928 /* EmoticonPackages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6661651CA6213A004BA928 /* EmoticonPackages.swift */; };
+		5C6661681CA62B3C004BA928 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C6661671CA62B3C004BA928 /* Emoticons.bundle */; };
+		5C66616A1CA8FE46004BA928 /* UITextVewCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6661691CA8FE46004BA928 /* UITextVewCategory.swift */; };
+		5C66616C1CA90358004BA928 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66616B1CA90358004BA928 /* ImageAttachment.swift */; };
+		5C66616E1CA91186004BA928 /* EmoticonTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C66616D1CA91186004BA928 /* EmoticonTextAttachment.swift */; };
+		5C6B05A01C99B47D00E2BC8F /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B059F1C99B47D00E2BC8F /* UIView+AutoLayout.swift */; };
 		5C6D75001C91385F001C71EE /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D74FF1C91385F001C71EE /* StatusPictureView.swift */; };
 		5C6D75021C914F73001C71EE /* StatusTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75011C914F73001C71EE /* StatusTopView.swift */; };
 		5C6D75041C91534F001C71EE /* StatusBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75031C91534F001C71EE /* StatusBottomView.swift */; };
 		5C6D75061C915F8A001C71EE /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75051C915F8A001C71EE /* UIButton+Category.swift */; };
-		5C6D75081C9165E4001C71EE /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75071C9165E4001C71EE /* StatusNormalCell.swift */; };
 		5C6D750A1C9166A4001C71EE /* UILabl+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6D75091C9166A4001C71EE /* UILabl+Category.swift */; };
 		5C71EA5A1C94307C00B0B77D /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C71EA591C94307C00B0B77D /* Popover.storyboard */; };
 		5C7605591C943D270067243E /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7605581C943D270067243E /* PopoverPresentationController.swift */; };
@@ -43,6 +54,10 @@
 		5C93C77A1C99094B009C2A96 /* StrngCatgpry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C93C7791C99094B009C2A96 /* StrngCatgpry.swift */; };
 		5CA1AB6C1C8E7225002BA7D8 /* HSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA1AB6B1C8E7225002BA7D8 /* HSDate+Category.swift */; };
 		5CB7B8781C71CBFE00E23698 /* UIImageView+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7B8771C71CBFE00E23698 /* UIImageView+Category.swift */; };
+		5CBA15021C9C04030009BAB8 /* StatusNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA15011C9C04030009BAB8 /* StatusNormalCell.swift */; };
+		5CBA15041C9C1C450009BAB8 /* StatusForwardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA15031C9C1C450009BAB8 /* StatusForwardCell.swift */; };
+		5CBA15071C9D7D2C0009BAB8 /* HomeRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBA15061C9D7D2C0009BAB8 /* HomeRefreshControl.swift */; };
+		5CBA15091C9D7D4E0009BAB8 /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA15081C9D7D4E0009BAB8 /* HomeRefreshView.xib */; };
 		5CBD6FC91C46617300926A93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD6FC81C46617300926A93 /* AppDelegate.swift */; };
 		5CBD6FCB1C46617300926A93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBD6FCA1C46617300926A93 /* ViewController.swift */; };
 		5CBD6FCE1C46617300926A93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CBD6FCC1C46617300926A93 /* Main.storyboard */; };
@@ -76,17 +91,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C19AF421CAA7590000CF2EC /* UIToolbarCategroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIToolbarCategroy.swift; sourceTree = "<group>"; };
 		5C2B8F011C8BBD3C00CBEDA1 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		5C2B8F031C8BE1D100CBEDA1 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
 		5C2DDA3B1C681ECC0041D732 /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 		5C2DDA3D1C6822DD0041D732 /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		5C2DDA3F1C6834D40041D732 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		5C2DDA431C6854DB0041D732 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		5C2DDA431C6854DB0041D732 /* UIView+AutoLayoutjy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutjy.swift"; sourceTree = "<group>"; };
+		5C3048101CA3BC5D00A566A0 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		5C3048121CA3FAE500A566A0 /* JYView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYView.swift; sourceTree = "<group>"; };
+		5C3048141CA3FCE200A566A0 /* EmojiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
+		5C4A837C1CA1634400FB24A4 /* WeiboPictrueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiboPictrueViewController.swift; sourceTree = "<group>"; };
 		5C5A57CC1C47DD9600382E5E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		5C5A57CE1C47E79800382E5E /* WeiboModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiboModal.swift; sourceTree = "<group>"; };
 		5C5BB0B61C704713006FF278 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 		5C5BB0C01C7052A7006FF278 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		5C5BB0C21C705574006FF278 /* JYPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYPopoverViewController.swift; sourceTree = "<group>"; };
+		5C5C921B1CA17E86007B68CA /* PctrueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PctrueCell.swift; sourceTree = "<group>"; };
 		5C5CE5DE1C65A1930051C36F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5C5CE5E01C65A38B0051C36F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5C5CE5E21C65A9160051C36F /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -97,11 +118,16 @@
 		5C639A121C95ADED0038B0DA /* ScanCategroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanCategroy.swift; sourceTree = "<group>"; };
 		5C639A141C95AE590038B0DA /* HomCategroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomCategroy.swift; sourceTree = "<group>"; };
 		5C639A161C9657530038B0DA /* ImageCategroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCategroy.swift; sourceTree = "<group>"; };
+		5C6661651CA6213A004BA928 /* EmoticonPackages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackages.swift; sourceTree = "<group>"; };
+		5C6661671CA62B3C004BA928 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		5C6661691CA8FE46004BA928 /* UITextVewCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextVewCategory.swift; sourceTree = "<group>"; };
+		5C66616B1CA90358004BA928 /* ImageAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAttachment.swift; sourceTree = "<group>"; };
+		5C66616D1CA91186004BA928 /* EmoticonTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonTextAttachment.swift; sourceTree = "<group>"; };
+		5C6B059F1C99B47D00E2BC8F /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		5C6D74FF1C91385F001C71EE /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		5C6D75011C914F73001C71EE /* StatusTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTopView.swift; sourceTree = "<group>"; };
 		5C6D75031C91534F001C71EE /* StatusBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBottomView.swift; sourceTree = "<group>"; };
 		5C6D75051C915F8A001C71EE /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
-		5C6D75071C9165E4001C71EE /* StatusNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
 		5C6D75091C9166A4001C71EE /* UILabl+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabl+Category.swift"; sourceTree = "<group>"; };
 		5C71EA591C94307C00B0B77D /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
 		5C7605581C943D270067243E /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
@@ -112,6 +138,10 @@
 		5C93C7791C99094B009C2A96 /* StrngCatgpry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrngCatgpry.swift; sourceTree = "<group>"; };
 		5CA1AB6B1C8E7225002BA7D8 /* HSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HSDate+Category.swift"; sourceTree = "<group>"; };
 		5CB7B8771C71CBFE00E23698 /* UIImageView+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Category.swift"; sourceTree = "<group>"; };
+		5CBA15011C9C04030009BAB8 /* StatusNormalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNormalCell.swift; sourceTree = "<group>"; };
+		5CBA15031C9C1C450009BAB8 /* StatusForwardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusForwardCell.swift; sourceTree = "<group>"; };
+		5CBA15061C9D7D2C0009BAB8 /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
+		5CBA15081C9D7D4E0009BAB8 /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
 		5CBD6FC51C46617300926A93 /* SwftLoveWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwftLoveWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CBD6FC81C46617300926A93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CBD6FCA1C46617300926A93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -201,9 +231,31 @@
 			name = OAuth;
 			sourceTree = "<group>";
 		};
+		5C30480D1CA3BC2000A566A0 /* compose */ = {
+			isa = PBXGroup;
+			children = (
+				5C3048101CA3BC5D00A566A0 /* ComposeViewController.swift */,
+				5C3048121CA3FAE500A566A0 /* JYView.swift */,
+				5C6661671CA62B3C004BA928 /* Emoticons.bundle */,
+				5C3048141CA3FCE200A566A0 /* EmojiViewController.swift */,
+				5C6661651CA6213A004BA928 /* EmoticonPackages.swift */,
+			);
+			name = compose;
+			sourceTree = "<group>";
+		};
+		5C4A837B1CA1620500FB24A4 /* PctureShow */ = {
+			isa = PBXGroup;
+			children = (
+				5C4A837C1CA1634400FB24A4 /* WeiboPictrueViewController.swift */,
+				5C5C921B1CA17E86007B68CA /* PctrueCell.swift */,
+			);
+			name = PctureShow;
+			sourceTree = "<group>";
+		};
 		5C5BB0B81C704E02006FF278 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5C30480D1CA3BC2000A566A0 /* compose */,
 				5C7AF7191C8C089C007D989B /* NewFature */,
 				5C2B8F001C8BBD0E00CBEDA1 /* OAuth */,
 				5C5BB0BF1C704E96006FF278 /* Tools */,
@@ -219,6 +271,8 @@
 		5C5BB0B91C704E0F006FF278 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5C4A837B1CA1620500FB24A4 /* PctureShow */,
+				5CBA15051C9D7C9F0009BAB8 /* Refresh */,
 				5CCDB3EF1C96732C00507BAC /* SCanQRCode */,
 				5C71EA581C94305F00B0B77D /* Popover */,
 				5C5CE5E01C65A38B0051C36F /* HomeViewController.swift */,
@@ -228,8 +282,9 @@
 				5C6D74FF1C91385F001C71EE /* StatusPictureView.swift */,
 				5C6D75011C914F73001C71EE /* StatusTopView.swift */,
 				5C6D75031C91534F001C71EE /* StatusBottomView.swift */,
-				5C6D75071C9165E4001C71EE /* StatusNormalCell.swift */,
 				5C639A141C95AE590038B0DA /* HomCategroy.swift */,
+				5CBA15011C9C04030009BAB8 /* StatusNormalCell.swift */,
+				5CBA15031C9C1C450009BAB8 /* StatusForwardCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -281,7 +336,8 @@
 		5C5BB0BF1C704E96006FF278 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				5C2DDA431C6854DB0041D732 /* UIView+AutoLayout.swift */,
+				5C2DDA431C6854DB0041D732 /* UIView+AutoLayoutjy.swift */,
+				5C6B059F1C99B47D00E2BC8F /* UIView+AutoLayout.swift */,
 				5C5BB0B61C704713006FF278 /* UIBarButtonItem+Category.swift */,
 				5CBD6FEB1C4663E300926A93 /* SwftLoveWeibo-Bridging-Header.h */,
 				5C5A57CC1C47DD9600382E5E /* SwiftyJSON.swift */,
@@ -295,6 +351,10 @@
 				5C6D75091C9166A4001C71EE /* UILabl+Category.swift */,
 				5C639A161C9657530038B0DA /* ImageCategroy.swift */,
 				5C93C7791C99094B009C2A96 /* StrngCatgpry.swift */,
+				5C6661691CA8FE46004BA928 /* UITextVewCategory.swift */,
+				5C66616B1CA90358004BA928 /* ImageAttachment.swift */,
+				5C66616D1CA91186004BA928 /* EmoticonTextAttachment.swift */,
+				5C19AF421CAA7590000CF2EC /* UIToolbarCategroy.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -323,6 +383,15 @@
 				5CCEA11E1C9957010080CF34 /* NewFeatureViewControllerCatery.swift */,
 			);
 			name = NewFature;
+			sourceTree = "<group>";
+		};
+		5CBA15051C9D7C9F0009BAB8 /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				5CBA15061C9D7D2C0009BAB8 /* HomeRefreshControl.swift */,
+				5CBA15081C9D7D4E0009BAB8 /* HomeRefreshView.xib */,
+			);
+			name = Refresh;
 			sourceTree = "<group>";
 		};
 		5CBD6FBC1C46617300926A93 = {
@@ -482,8 +551,10 @@
 				5C5CE5E91C65ABB70051C36F /* MainVCSettings.json in Resources */,
 				5C71EA5A1C94307C00B0B77D /* Popover.storyboard in Resources */,
 				5CBD6FCE1C46617300926A93 /* Main.storyboard in Resources */,
+				5CBA15091C9D7D4E0009BAB8 /* HomeRefreshView.xib in Resources */,
 				5CBD70051C466AF600926A93 /* Default-568h@2x.png in Resources */,
 				5CBD6FEA1C46638A00926A93 /* WeiboSDK.bundle in Resources */,
+				5C6661681CA62B3C004BA928 /* Emoticons.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4A837D1CA1634400FB24A4 /* WeiboPictrueViewController.swift in Sources */,
 				5C5BB0B71C704713006FF278 /* UIBarButtonItem+Category.swift in Sources */,
 				5C5CE5E51C65A9520051C36F /* DiscoverViewController.swift in Sources */,
 				5C2DDA3C1C681ECC0041D732 /* NullViewController.swift in Sources */,
@@ -553,6 +625,8 @@
 				5C7AF71B1C8C08D2007D989B /* NewFeatureViewController.swift in Sources */,
 				5CCEA11F1C9957010080CF34 /* NewFeatureViewControllerCatery.swift in Sources */,
 				5C93C77A1C99094B009C2A96 /* StrngCatgpry.swift in Sources */,
+				5C66616E1CA91186004BA928 /* EmoticonTextAttachment.swift in Sources */,
+				5C66616C1CA90358004BA928 /* ImageAttachment.swift in Sources */,
 				5C639A171C9657530038B0DA /* ImageCategroy.swift in Sources */,
 				5C76055F1C94607A0067243E /* ScanViewController.swift in Sources */,
 				5CE1931A1C8DBC9800EA3E70 /* User.swift in Sources */,
@@ -561,27 +635,37 @@
 				5C6D750A1C9166A4001C71EE /* UILabl+Category.swift in Sources */,
 				5CE193141C8C5C5900EA3E70 /* NewfeatureCell.swift in Sources */,
 				5CE193121C8C180500EA3E70 /* WelcomeViewController.swift in Sources */,
+				5C5C921C1CA17E86007B68CA /* PctrueCell.swift in Sources */,
+				5CBA15041C9C1C450009BAB8 /* StatusForwardCell.swift in Sources */,
+				5C66616A1CA8FE46004BA928 /* UITextVewCategory.swift in Sources */,
 				5CE193161C8C5D1400EA3E70 /* JYFlowLayout.swift in Sources */,
 				5C639A131C95ADED0038B0DA /* ScanCategroy.swift in Sources */,
 				5CA1AB6C1C8E7225002BA7D8 /* HSDate+Category.swift in Sources */,
 				5C6D75001C91385F001C71EE /* StatusPictureView.swift in Sources */,
+				5C19AF431CAA7590000CF2EC /* UIToolbarCategroy.swift in Sources */,
+				5C6B05A01C99B47D00E2BC8F /* UIView+AutoLayout.swift in Sources */,
 				5C2B8F021C8BBD3C00CBEDA1 /* OAuthViewController.swift in Sources */,
 				5C76055B1C9456BF0067243E /* PopoverViewController.swift in Sources */,
+				5C3048151CA3FCE200A566A0 /* EmojiViewController.swift in Sources */,
 				5CE193181C8C619E00EA3E70 /* Status.swift in Sources */,
+				5CBA15071C9D7D2C0009BAB8 /* HomeRefreshControl.swift in Sources */,
 				5C6D75021C914F73001C71EE /* StatusTopView.swift in Sources */,
 				5C5CE5E71C65A97F0051C36F /* ProfileViewController.swift in Sources */,
 				5C5A57CF1C47E79800382E5E /* WeiboModal.swift in Sources */,
-				5C6D75081C9165E4001C71EE /* StatusNormalCell.swift in Sources */,
 				5C2DDA401C6834D40041D732 /* BaseViewController.swift in Sources */,
+				5C6661661CA6213A004BA928 /* EmoticonPackages.swift in Sources */,
 				5C5CE5E31C65A9160051C36F /* MessageViewController.swift in Sources */,
 				5CEBECB91C47326B00F50EBC /* WebViewController.swift in Sources */,
 				5C2DDA3E1C6822DD0041D732 /* VisitorView.swift in Sources */,
 				5C5BB0C11C7052A7006FF278 /* TitleButton.swift in Sources */,
 				5CB7B8781C71CBFE00E23698 /* UIImageView+Category.swift in Sources */,
 				5C6D75061C915F8A001C71EE /* UIButton+Category.swift in Sources */,
-				5C2DDA441C6854DB0041D732 /* UIView+AutoLayout.swift in Sources */,
+				5C3048131CA3FAE500A566A0 /* JYView.swift in Sources */,
+				5CBA15021C9C04030009BAB8 /* StatusNormalCell.swift in Sources */,
+				5C2DDA441C6854DB0041D732 /* UIView+AutoLayoutjy.swift in Sources */,
 				5C5CE5DF1C65A1930051C36F /* MainViewController.swift in Sources */,
 				5CBD6FC91C46617300926A93 /* AppDelegate.swift in Sources */,
+				5C3048111CA3BC5D00A566A0 /* ComposeViewController.swift in Sources */,
 				5C5CE5E11C65A38B0051C36F /* HomeViewController.swift in Sources */,
 				5C639A111C95AA0B0038B0DA /* PopoverAnimation.swift in Sources */,
 				5C5A57CD1C47DD9600382E5E /* SwiftyJSON.swift in Sources */,

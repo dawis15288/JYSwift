@@ -64,7 +64,7 @@ class MainViewController: UITabBarController {
         
         button.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: .Highlighted)
         
-        button.addTarget(self, action: "composeBtnClick:", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(composeBtnClick), forControlEvents: .TouchUpInside)
         
         return button
     
@@ -72,9 +72,13 @@ class MainViewController: UITabBarController {
     
     func composeBtnClick(sender: UIButton) {
         
-        print(__FUNCTION__)
+        let composeVC = ComposeViewController()
         
+        let navVC = UINavigationController(rootViewController: composeVC)
         
+        //let emojiVc = EmojiViewController()
+        
+        presentViewController(navVC, animated: true, completion: nil)
         
     }
     

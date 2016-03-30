@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JYCAlayerProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JD7-ra-1x9">
+                                <rect key="frame" x="20" y="28" width="191" height="164"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50016856949999999" green="1" blue="0.3384674801" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JD7-ra-1x9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="7Uu-Na-Bnh"/>
+                            <constraint firstItem="JD7-ra-1x9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="CCX-Gv-yEh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JD7-ra-1x9" secondAttribute="bottom" constant="408" id="YSJ-Q3-48d"/>
+                            <constraint firstAttribute="trailing" secondItem="JD7-ra-1x9" secondAttribute="trailing" constant="389" id="ks0-xf-9PH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingView" destination="JD7-ra-1x9" id="dJw-PA-f8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="335" y="287"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8aH-mX-WUO">
+            <objects>
+                <viewController id="QQN-B3-dFp" customClass="JYViewController" customModule="JYCAlayerProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="U7g-18-mwJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="CRt-YA-N1U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FVJ-jJ-Kov">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ozu-UD-gLL">
+                                <rect key="frame" x="180" y="20" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.015686274510000001" green="0.87058823529999996" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ozu-UD-gLL" firstAttribute="centerX" secondItem="FVJ-jJ-Kov" secondAttribute="centerX" id="9BU-hc-8kt"/>
+                            <constraint firstItem="CRt-YA-N1U" firstAttribute="top" secondItem="Ozu-UD-gLL" secondAttribute="bottom" constant="452" id="U8O-2w-toL"/>
+                            <constraint firstItem="Ozu-UD-gLL" firstAttribute="leading" secondItem="FVJ-jJ-Kov" secondAttribute="leading" constant="180" id="dwR-Ma-86L"/>
+                            <constraint firstItem="Ozu-UD-gLL" firstAttribute="top" secondItem="U7g-18-mwJ" secondAttribute="bottom" id="hv2-F3-zxN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadView" destination="Ozu-UD-gLL" id="sWO-nJ-rN5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTI-EL-tbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149" y="519"/>
+        </scene>
+    </scenes>
+</document>

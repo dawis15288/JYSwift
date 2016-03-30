@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WeiboSDKDelegate {
         
         setupAppearance()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: JYRootViewControllerSwitchNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(switchRootViewController(_:)), name: JYRootViewControllerSwitchNotification, object: nil)
         
         WeiboSDK.enableDebugMode(true)
         WeiboSDK.registerApp("1227520346")
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WeiboSDKDelegate {
         
         if UserAccount.loadAccount() != nil {
             
-            return isNewUpdate() ? WelcomeViewController() : NewFeatureViewController()
+            return isNewUpdate() ? NewFeatureViewController() :  WelcomeViewController() 
         
         }
         
@@ -67,11 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WeiboSDKDelegate {
         
         if currentVersion.compare(sandboxVersion) == NSComparisonResult.OrderedDescending {
             
-            let defaults = NSUserDefaults.standardUserDefaults()
+            NSUserDefaults.standardUserDefaults().setObject(currentVersion, forKey: "CFBundleShortVersionString")
             
-            defaults.setValue(currentVersion, forKey: "CFBundleShortVersionString")
-            
-            defaults.synchronize()
+            //defaults.synchronize()currentVersion, forKey: "CFBundleShortVersionString"
             
             return true
         

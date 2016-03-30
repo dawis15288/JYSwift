@@ -1,0 +1,6 @@
+framework module Pods_JYCoffeeProjct {
+  umbrella header "Pods-JYCoffeeProjct-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -18,5 +18,16 @@ extension UILabel {
         
         font = UIFont.systemFontOfSize(fontSize)
     }
+    
+    class func createLabel(color: UIColor, font: CGFloat) -> UILabel {
+        
+        let lb = UILabel()
+        
+        lb.textColor = color
+        
+        lb.font = UIFont.systemFontOfSize(font)
+        
+        return lb
+    }
 
 }

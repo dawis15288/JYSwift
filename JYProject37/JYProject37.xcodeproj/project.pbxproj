@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C2DD9FE1C677EF40041D732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DD9FD1C677EF40041D732 /* AppDelegate.swift */; };
+		5C2DDA001C677EF40041D732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DD9FF1C677EF40041D732 /* ViewController.swift */; };
+		5C2DDA031C677EF40041D732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDA011C677EF40041D732 /* Main.storyboard */; };
+		5C2DDA051C677EF40041D732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDA041C677EF40041D732 /* Assets.xcassets */; };
+		5C2DDA081C677EF40041D732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDA061C677EF40041D732 /* LaunchScreen.storyboard */; };
+		5C2DDA0D1C677EF40041D732 /* JYProject37 WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5C2DDA0C1C677EF40041D732 /* JYProject37 WatchKit App.app */; };
+		5C2DDA131C677EF40041D732 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDA111C677EF40041D732 /* Interface.storyboard */; };
+		5C2DDA151C677EF40041D732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDA141C677EF40041D732 /* Assets.xcassets */; };
+		5C2DDA1C1C677EF40041D732 /* JYProject37 WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5C2DDA1B1C677EF40041D732 /* JYProject37 WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5C2DDA211C677EF40041D732 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA201C677EF40041D732 /* InterfaceController.swift */; };
+		5C2DDA231C677EF40041D732 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA221C677EF40041D732 /* ExtensionDelegate.swift */; };
+		5C2DDA251C677EF40041D732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C2DDA241C677EF40041D732 /* Assets.xcassets */; };
+		5C2DDA3A1C67819C0041D732 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2DDA391C67819C0041D732 /* CardViewController.swift */; };
+		5C5BB0921C6ECDBD006FF278 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5BB0911C6ECDBD006FF278 /* GradientView.swift */; };
+		5C5BB0961C6EE0CC006FF278 /* PhantomFromSpace.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C5BB0941C6EE0CC006FF278 /* PhantomFromSpace.mp3 */; };
+		5C5BB0971C6EE0CC006FF278 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5C5BB0951C6EE0CC006FF278 /* README.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C2DDA0E1C677EF40041D732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C2DD9F21C677EF40041D732 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C2DDA0B1C677EF40041D732;
+			remoteInfo = "JYProject37 WatchKit App";
+		};
+		5C2DDA1D1C677EF40041D732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C2DD9F21C677EF40041D732 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C2DDA1A1C677EF40041D732;
+			remoteInfo = "JYProject37 WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5C2DDA2C1C677EF40041D732 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5C2DDA1C1C677EF40041D732 /* JYProject37 WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2DDA301C677EF40041D732 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5C2DDA0D1C677EF40041D732 /* JYProject37 WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5C2DD9FA1C677EF40041D732 /* JYProject37.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYProject37.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2DD9FD1C677EF40041D732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C2DD9FF1C677EF40041D732 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C2DDA021C677EF40041D732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C2DDA041C677EF40041D732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C2DDA071C677EF40041D732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C2DDA091C677EF40041D732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2DDA0C1C677EF40041D732 /* JYProject37 WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JYProject37 WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2DDA121C677EF40041D732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5C2DDA141C677EF40041D732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C2DDA161C677EF40041D732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2DDA1B1C677EF40041D732 /* JYProject37 WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "JYProject37 WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C2DDA201C677EF40041D732 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5C2DDA221C677EF40041D732 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5C2DDA241C677EF40041D732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C2DDA261C677EF40041D732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C2DDA391C67819C0041D732 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		5C5BB0911C6ECDBD006FF278 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		5C5BB0941C6EE0CC006FF278 /* PhantomFromSpace.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PhantomFromSpace.mp3; sourceTree = "<group>"; };
+		5C5BB0951C6EE0CC006FF278 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C2DD9F71C677EF40041D732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2DDA181C677EF40041D732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C2DD9F11C677EF40041D732 = {
+			isa = PBXGroup;
+			children = (
+				5C2DD9FC1C677EF40041D732 /* JYProject37 */,
+				5C2DDA101C677EF40041D732 /* JYProject37 WatchKit App */,
+				5C2DDA1F1C677EF40041D732 /* JYProject37 WatchKit Extension */,
+				5C2DD9FB1C677EF40041D732 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C2DD9FB1C677EF40041D732 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C2DD9FA1C677EF40041D732 /* JYProject37.app */,
+				5C2DDA0C1C677EF40041D732 /* JYProject37 WatchKit App.app */,
+				5C2DDA1B1C677EF40041D732 /* JYProject37 WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C2DD9FC1C677EF40041D732 /* JYProject37 */ = {
+			isa = PBXGroup;
+			children = (
+				5C2DD9FD1C677EF40041D732 /* AppDelegate.swift */,
+				5C2DD9FF1C677EF40041D732 /* ViewController.swift */,
+				5C2DDA011C677EF40041D732 /* Main.storyboard */,
+				5C2DDA041C677EF40041D732 /* Assets.xcassets */,
+				5C2DDA061C677EF40041D732 /* LaunchScreen.storyboard */,
+				5C2DDA091C677EF40041D732 /* Info.plist */,
+				5C2DDA391C67819C0041D732 /* CardViewController.swift */,
+				5C5BB0911C6ECDBD006FF278 /* GradientView.swift */,
+				5C5BB0931C6EE0CC006FF278 /* Content */,
+			);
+			path = JYProject37;
+			sourceTree = "<group>";
+		};
+		5C2DDA101C677EF40041D732 /* JYProject37 WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5C2DDA111C677EF40041D732 /* Interface.storyboard */,
+				5C2DDA141C677EF40041D732 /* Assets.xcassets */,
+				5C2DDA161C677EF40041D732 /* Info.plist */,
+			);
+			path = "JYProject37 WatchKit App";
+			sourceTree = "<group>";
+		};
+		5C2DDA1F1C677EF40041D732 /* JYProject37 WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C2DDA201C677EF40041D732 /* InterfaceController.swift */,
+				5C2DDA221C677EF40041D732 /* ExtensionDelegate.swift */,
+				5C2DDA241C677EF40041D732 /* Assets.xcassets */,
+				5C2DDA261C677EF40041D732 /* Info.plist */,
+			);
+			path = "JYProject37 WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		5C5BB0931C6EE0CC006FF278 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				5C5BB0941C6EE0CC006FF278 /* PhantomFromSpace.mp3 */,
+				5C5BB0951C6EE0CC006FF278 /* README.txt */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C2DD9F91C677EF40041D732 /* JYProject37 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2DDA311C677EF40041D732 /* Build configuration list for PBXNativeTarget "JYProject37" */;
+			buildPhases = (
+				5C2DD9F61C677EF40041D732 /* Sources */,
+				5C2DD9F71C677EF40041D732 /* Frameworks */,
+				5C2DD9F81C677EF40041D732 /* Resources */,
+				5C2DDA301C677EF40041D732 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C2DDA0F1C677EF40041D732 /* PBXTargetDependency */,
+			);
+			name = JYProject37;
+			productName = JYProject37;
+			productReference = 5C2DD9FA1C677EF40041D732 /* JYProject37.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C2DDA0B1C677EF40041D732 /* JYProject37 WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2DDA2D1C677EF40041D732 /* Build configuration list for PBXNativeTarget "JYProject37 WatchKit App" */;
+			buildPhases = (
+				5C2DDA0A1C677EF40041D732 /* Resources */,
+				5C2DDA2C1C677EF40041D732 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C2DDA1E1C677EF40041D732 /* PBXTargetDependency */,
+			);
+			name = "JYProject37 WatchKit App";
+			productName = "JYProject37 WatchKit App";
+			productReference = 5C2DDA0C1C677EF40041D732 /* JYProject37 WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		5C2DDA1A1C677EF40041D732 /* JYProject37 WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C2DDA291C677EF40041D732 /* Build configuration list for PBXNativeTarget "JYProject37 WatchKit Extension" */;
+			buildPhases = (
+				5C2DDA171C677EF40041D732 /* Sources */,
+				5C2DDA181C677EF40041D732 /* Frameworks */,
+				5C2DDA191C677EF40041D732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JYProject37 WatchKit Extension";
+			productName = "JYProject37 WatchKit Extension";
+			productReference = 5C2DDA1B1C677EF40041D732 /* JYProject37 WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C2DD9F21C677EF40041D732 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = cyin;
+				TargetAttributes = {
+					5C2DD9F91C677EF40041D732 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = JE8CSGTB5D;
+					};
+					5C2DDA0B1C677EF40041D732 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = JE8CSGTB5D;
+					};
+					5C2DDA1A1C677EF40041D732 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = JE8CSGTB5D;
+					};
+				};
+			};
+			buildConfigurationList = 5C2DD9F51C677EF40041D732 /* Build configuration list for PBXProject "JYProject37" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C2DD9F11C677EF40041D732;
+			productRefGroup = 5C2DD9FB1C677EF40041D732 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C2DD9F91C677EF40041D732 /* JYProject37 */,
+				5C2DDA0B1C677EF40041D732 /* JYProject37 WatchKit App */,
+				5C2DDA1A1C677EF40041D732 /* JYProject37 WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C2DD9F81C677EF40041D732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2DDA081C677EF40041D732 /* LaunchScreen.storyboard in Resources */,
+				5C5BB0961C6EE0CC006FF278 /* PhantomFromSpace.mp3 in Resources */,
+				5C2DDA051C677EF40041D732 /* Assets.xcassets in Resources */,
+				5C2DDA031C677EF40041D732 /* Main.storyboard in Resources */,
+				5C5BB0971C6EE0CC006FF278 /* README.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2DDA0A1C677EF40041D732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2DDA151C677EF40041D732 /* Assets.xcassets in Resources */,
+				5C2DDA131C677EF40041D732 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2DDA191C677EF40041D732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2DDA251C677EF40041D732 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C2DD9F61C677EF40041D732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2DDA001C677EF40041D732 /* ViewController.swift in Sources */,
+				5C2DD9FE1C677EF40041D732 /* AppDelegate.swift in Sources */,
+				5C5BB0921C6ECDBD006FF278 /* GradientView.swift in Sources */,
+				5C2DDA3A1C67819C0041D732 /* CardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C2DDA171C677EF40041D732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C2DDA231C677EF40041D732 /* ExtensionDelegate.swift in Sources */,
+				5C2DDA211C677EF40041D732 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C2DDA0F1C677EF40041D732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C2DDA0B1C677EF40041D732 /* JYProject37 WatchKit App */;
+			targetProxy = 5C2DDA0E1C677EF40041D732 /* PBXContainerItemProxy */;
+		};
+		5C2DDA1E1C677EF40041D732 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C2DDA1A1C677EF40041D732 /* JYProject37 WatchKit Extension */;
+			targetProxy = 5C2DDA1D1C677EF40041D732 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5C2DDA011C677EF40041D732 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2DDA021C677EF40041D732 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C2DDA061C677EF40041D732 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2DDA071C677EF40041D732 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5C2DDA111C677EF40041D732 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C2DDA121C677EF40041D732 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C2DDA271C677EF40041D732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C2DDA281C677EF40041D732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C2DDA2A1C677EF40041D732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "JYProject37 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYProject37.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		5C2DDA2B1C677EF40041D732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "JYProject37 WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYProject37.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		5C2DDA2E1C677EF40041D732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = JYProject37_WatchKit_Extension;
+				INFOPLIST_FILE = "JYProject37 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYProject37.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		5C2DDA2F1C677EF40041D732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = JYProject37_WatchKit_Extension;
+				INFOPLIST_FILE = "JYProject37 WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYProject37.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		5C2DDA321C677EF40041D732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JYProject37/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYProject37;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5C2DDA331C677EF40041D732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JYProject37/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYProject37;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C2DD9F51C677EF40041D732 /* Build configuration list for PBXProject "JYProject37" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2DDA271C677EF40041D732 /* Debug */,
+				5C2DDA281C677EF40041D732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C2DDA291C677EF40041D732 /* Build configuration list for PBXNativeTarget "JYProject37 WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2DDA2A1C677EF40041D732 /* Debug */,
+				5C2DDA2B1C677EF40041D732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C2DDA2D1C677EF40041D732 /* Build configuration list for PBXNativeTarget "JYProject37 WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2DDA2E1C677EF40041D732 /* Debug */,
+				5C2DDA2F1C677EF40041D732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C2DDA311C677EF40041D732 /* Build configuration list for PBXNativeTarget "JYProject37" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2DDA321C677EF40041D732 /* Debug */,
+				5C2DDA331C677EF40041D732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C2DD9F21C677EF40041D732 /* Project object */;
+}

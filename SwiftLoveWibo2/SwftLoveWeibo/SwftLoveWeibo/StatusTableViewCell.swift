@@ -18,7 +18,7 @@ class StatusTableViewCell: UITableViewCell {
     
     var pictrueHeightCons: NSLayoutConstraint?
     
-    var topCons: NSLayoutConstraint?
+    var pictrueTopCons: NSLayoutConstraint?
     
     var status: Status? {
     
@@ -26,19 +26,26 @@ class StatusTableViewCell: UITableViewCell {
             
             topView.status = status
             
+            
             contentLabel.text = status!.text
             
-            pictureView.status = status
+            pictureView.status = status!.retweeted_Status != nil ? status!.retweeted_Status! : status
             
-            //let size = pictureView.calculateImageSize()
+            //设置配图尺寸
             
-            pictureWidthCons?.constant = pictureView.bounds.size.width
+           let size = pictureView.calculateImageSize()
             
-            pictureWidthCons?.constant = pictureView.bounds.size.height
             
-            topCons?.constant = (pictureView.bounds.size.height == 0) ? 0 : 10
             
-            pictureView.reloadData()
+            pictureWidthCons?.constant = size.viewSize.width
+            
+            
+            
+            pictrueHeightCons?.constant = size.viewSize.height
+            
+            pictrueTopCons?.constant = size.viewSize.height == 0 ? 0 : 10
+            
+            
         
         }
     }
@@ -48,6 +55,8 @@ class StatusTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupUIs()
+        
+        //setupPicture()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,35 +66,33 @@ class StatusTableViewCell: UITableViewCell {
     
     func setupUIs() {
         
-        addSubview(topView)
+        contentView.addSubview(topView)
         
-        addSubview(contentLabel)
+        contentView.addSubview(contentLabel)
         
-        addSubview(pictureView)
+        contentView.addSubview(pictureView)
         
-        addSubview(footerView)
+       contentView.addSubview(footerView)
         
-        let width = UIScreen.mainScreen().bounds.width
+        let wdth = UIScreen.mainScreen().bounds.width
         
-        topView.JY_AlignInner(type: JY_AlignType.TopLeft, referView: contentView, size: CGSize(width: width, height: 35))
-        
-         contentLabel.jy_AlignVertical(type: JY_AlignType.BottmLeft, referView: topView, size: nil, offset: CGPoint(x: 5, y: 10))
-        
-        let cons =  pictureView.jy_AlignVertical(type: JY_AlignType.BottmLeft, referView: contentLabel, size: CGSizeZero, offset: CGPoint(x: 0, y: 10))
-        
-        pictureWidthCons = pictureView.jy_Constraint(cons, attribute: NSLayoutAttribute.Width)
-        
-        pictrueHeightCons = pictureView.jy_Constraint(cons, attribute: NSLayoutAttribute.Height)
-        
-        topCons = pictureView.jy_Constraint(cons, attribute: NSLayoutAttribute.Top)
+        topView.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: contentView, size: CGSize(width: wdth, height: 60))
         
         
-        footerView.jy_AlignVertical(type: JY_AlignType.BottmLeft, referView: pictureView, size: CGSize(width: width, height: 44), offset: CGPoint(x: -10, y: 10))
+        contentLabel.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 10, y: 10))
+
+        
+        
+        
+        footerView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: wdth, height: 44), offset: CGPoint(x: -10, y: 10))
+        
+        
+       
     }
     
     // MARK: -计算行高
     
-    func rowHeight(status: Status) -> CGFloat {
+    func rowHeights(status: Status) -> CGFloat {
         
         self.status = status
         
@@ -95,30 +102,39 @@ class StatusTableViewCell: UITableViewCell {
     
     }
     
-    
+   
    
     
-    // MARK: -设置各种控件
     
-    private var topView: StatusTopView = StatusTopView()
     
-    private var contentLabel: UILabel = {
-    
-        let label = UILabel(color:UIColor.darkGrayColor(), fontSize: 15)
+    var contentLabel: UILabel = {
+        
+        let label = UILabel.createLabel(UIColor.darkGrayColor(), font: 15)//UILabel(color:UIColor.darkGrayColor(), fontSize: 15)
         
         label.numberOfLines = 0
         
         label.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20
         
         return label
-    
+        
     }()
     
-    private lazy var pictureView: StatusPictureView = StatusPictureView()
+    
+    //MARK: 顶部视图
+    
+    private var topView: StatusTopView = StatusTopView()
+    
+    //private lazy var picturelayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    
+    lazy var pictureView: StatusPictureView = StatusPictureView()
+    
+    //UICollectionView(frame: CGRectZero, collectionViewLayout: self.picturelayout)
+    
+    //StatusPictureView()
     
     // MARK: footer视图
     
-    private lazy var footerView: StatusBottomView = StatusBottomView()
+    lazy var footerView: StatusBottomView = StatusBottomView()
     
      // MARK: header视图
     
@@ -133,5 +149,42 @@ class StatusTableViewCell: UITableViewCell {
     }()
 }
 
+/*private  class StatusFooterView: UIView {
+    
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
+        
+        setupUIs()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupUIs() {
+        
+        //backgroundColor = UIColor(white: 0.2, alpha: 1)
+        
+        addSubview(retweetButton)
+        
+        addSubview(unLikeButton)
+        
+        addSubview(commonButton)
+        
+        xmg_HorizontalTile([retweetButton, commonButton, unLikeButton], insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        
+    }
+    
+    private lazy var retweetButton: UIButton = UIButton.createButton("timeline_icon_unlike", title: "转发")
+    
+    
+    private lazy var unLikeButton: UIButton = UIButton.createButton("timeline_icon_unlike", title: "赞")
+    
+    
+    private lazy var commonButton: UIButton = UIButton.createButton("timeline_icon_comment", title: "评论")
+   
+    
+}*/
 
 

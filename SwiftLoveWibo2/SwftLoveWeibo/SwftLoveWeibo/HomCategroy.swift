@@ -25,36 +25,47 @@ extension HomeViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(JYHomeCellReuseIdentifier, forIndexPath: indexPath) as! StatusTableViewCell
-        
         let status = statues![indexPath.row]
         
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatuTableViewCellReuseIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
+        
+        
+        
         cell.status = status
+        
+        if indexPath.row == (statues?.count)! - 1 {
+            
+            pullRefreshFlag = true
+            
+            loadData()
+        
+        }
         
         
         return cell
     }
     
+   
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        let status = statues![indexPath.row]
         
-        if let height =  rowheightCache[status.id] {
+         let status = statues![indexPath.row]
+        
+        if let height = rowheightCache[status.id] {
             
             return height
-            
+        
         }
+            
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatuTableViewCellReuseIdentifier.cellID(status)) as! StatusTableViewCell
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(JYHomeCellReuseIdentifier) as! StatusTableViewCell
-        
-        let rowHeight = cell.rowHeight(status)
+        let rowHeight = cell.rowHeights(status)
         
         rowheightCache[status.id] = rowHeight
         
         return rowHeight
-        
+           
     }
-    
     
     
 }

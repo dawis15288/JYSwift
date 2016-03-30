@@ -21,10 +21,6 @@ class BaseViewController: UITableViewController, VisitorViewDelegate {
     
     override func loadView() {
         
-        
-        
-        print("override func loadView() {account!.loadUserInfo:\(account?.name)\n\n\n")
-        
         login ? super.loadView() : setupVisitor()
         
     }

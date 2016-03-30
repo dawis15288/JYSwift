@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15A278b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swb-oz-WEP">
+                    <rect key="frame" x="8" y="19" width="107" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="107" id="KYc-Yr-MdU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NM-U1-FYM">
+                    <rect key="frame" x="123" y="20" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="8YO-oq-8H7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="傻" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUc-9I-cTI">
+                    <rect key="frame" x="219" y="19" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="coj-xZ-ejf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jq-vI-NLI">
+                    <rect key="frame" x="312" y="19" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="Lcq-P8-fL9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Swb-oz-WEP" firstAttribute="firstBaseline" secondItem="6Jq-vI-NLI" secondAttribute="firstBaseline" id="3Eg-p1-cKn"/>
+                <constraint firstItem="Swb-oz-WEP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="6Yc-n0-BIn"/>
+                <constraint firstItem="6Jq-vI-NLI" firstAttribute="leading" secondItem="GUc-9I-cTI" secondAttribute="trailing" constant="51" id="G7K-yH-dIE"/>
+                <constraint firstItem="6NM-U1-FYM" firstAttribute="leading" secondItem="Swb-oz-WEP" secondAttribute="trailing" constant="8" id="MHL-70-KBc"/>
+                <constraint firstItem="GUc-9I-cTI" firstAttribute="firstBaseline" secondItem="6NM-U1-FYM" secondAttribute="firstBaseline" constant="-1" id="WsE-1L-9yx"/>
+                <constraint firstItem="6NM-U1-FYM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="XBF-hr-hPn"/>
+                <constraint firstItem="6Jq-vI-NLI" firstAttribute="baseline" secondItem="Swb-oz-WEP" secondAttribute="baseline" id="bhy-Ft-SuQ"/>
+                <constraint firstItem="GUc-9I-cTI" firstAttribute="leading" secondItem="6NM-U1-FYM" secondAttribute="trailing" constant="54" id="ioP-am-DNh"/>
+                <constraint firstItem="Swb-oz-WEP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="k7W-VF-oS3"/>
+                <constraint firstItem="6NM-U1-FYM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="leL-Jg-4YX"/>
+                <constraint firstItem="Swb-oz-WEP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="oIM-Td-Eh8"/>
+                <constraint firstItem="GUc-9I-cTI" firstAttribute="baseline" secondItem="6NM-U1-FYM" secondAttribute="baseline" constant="-1" id="sBM-nv-dxA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="520" y="565"/>
+        </view>
+    </objects>
+</document>

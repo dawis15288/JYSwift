@@ -10,6 +10,8 @@ import UIKit
 
 import SVProgressHUD
 
+import Alamofire
+
 class OAuthViewController: UIViewController {
     
     private let WB_Client_ID = "1227520346"
@@ -51,7 +53,7 @@ class OAuthViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "oauth"
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .Plain, target: self, action: "closee")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .Plain, target: self, action: #selector(OAuthViewController.closee))
         
         //loadOAuthPage()
         
@@ -163,7 +165,7 @@ extension OAuthViewController: UIWebViewDelegate {
         
         let postParms = "\(accessTokenEndPoint)?client_id=\(weiboKey)&client_secret=\(weiboSecret)&grant_type=\(grantType)&redirect_uri=\(redirectURL)&code=\(authorizationCode)"
         
-        let bodyStr = "type=focus-c"
+        /*let bodyStr = "type=focus-c"
         
         let postData = bodyStr.dataUsingEncoding(NSUTF8StringEncoding)
         
@@ -207,7 +209,7 @@ extension OAuthViewController: UIWebViewDelegate {
                                     
                                     self.dismissViewControllerAnimated(true, completion: nil)
                                     
-                                    NSNotificationCenter.defaultCenter().postNotificationName(JYRootViewControllerSwitchNotification, object: true)
+                                    NSNotificationCenter.defaultCenter().postNotificationName(JYRootViewControllerSwitchNotification, object: false)
                                 }
                         }
 
@@ -228,8 +230,39 @@ extension OAuthViewController: UIWebViewDelegate {
             
         }
         
-        task.resume()
+        task.resume()*/
         
+        Alamofire.request(.POST, postParms).responseJSON(completionHandler: { (response) -> Void in
+            
+            if response.result.isSuccess {
+                
+                if let dataDictionary = response.result.value {
+                
+                    let account = UserAccount(dict: dataDictionary as! [String: AnyObject])
+                    
+                    account.loadUserInfo({ (account, error) -> Void in
+                        
+                        print("在获取令牌的同时获取用户信息\(account?.expires_Date)")
+                        
+                        if account != nil && error == nil{
+                            
+                            account!.saveAccount()
+                            
+                            dispatch_async(dispatch_get_main_queue()) { [unowned self] () -> Void in
+                                
+                                self.dismissViewControllerAnimated(true, completion: nil)
+                                
+                                NSNotificationCenter.defaultCenter().postNotificationName(JYRootViewControllerSwitchNotification, object: false)
+                            }
+                        }
+                        
+                    })
+                }
+            
+                
+            }
+            
+        })
         
     }
     
