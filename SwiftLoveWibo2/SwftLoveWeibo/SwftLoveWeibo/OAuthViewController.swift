@@ -232,7 +232,7 @@ extension OAuthViewController: UIWebViewDelegate {
         
         task.resume()*/
         
-        Alamofire.request(.POST, postParms).responseJSON(completionHandler: { (response) -> Void in
+       /* Alamofire.request(.POST, postParms).responseJSON(completionHandler: { (response) -> Void in
             
             if response.result.isSuccess {
                 
@@ -262,6 +262,17 @@ extension OAuthViewController: UIWebViewDelegate {
                 
             }
             
+        })*/
+        
+        weiboNetWorkTool.getAccesstoken(postParms, completeHandler: { () -> Void in
+            
+            dispatch_async(dispatch_get_main_queue()) { [unowned self] () -> Void in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                NSNotificationCenter.defaultCenter().postNotificationName(JYRootViewControllerSwitchNotification, object: false)
+            }
+        
         })
         
     }

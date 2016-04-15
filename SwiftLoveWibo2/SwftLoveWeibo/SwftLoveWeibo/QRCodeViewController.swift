@@ -68,6 +68,18 @@ class QRCodeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName(JYRootViewControllerSwitchNotification, object: true)
         
     }
+    @IBAction func selectorButton(sender: AnyObject) {
+        
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        
+        imagePicker.allowsEditing = true
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
+    @IBOutlet weak var selectorButton: UIBarButtonItem!
     
     private lazy var session: AVCaptureSession = AVCaptureSession()
     
@@ -148,12 +160,36 @@ class QRCodeViewController: UIViewController {
 
 }
 
-extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate {
+extension QRCodeViewController: AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
     
         print(metadataObjects)
     
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+       //从图片中提取二维码信息
+        
+        let image = editingInfo!["UIImagePickerControllerOriginalImage"] as! UIImage
+        
+        let ciImage = CIImage(image: image)
+        
+        let context = CIContext(options: nil)
+        
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+        
+        let features = detector.featuresInImage(ciImage!)
+        
+        print("扫描的二维码:\(features.count)")
+        
+        for featrue in features as! [CIQRCodeFeature] {
+        
+            print(featrue.messageString)
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
 

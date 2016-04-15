@@ -29,6 +29,8 @@ class StatusTableViewCell: UITableViewCell {
             
             contentLabel.text = status!.text
             
+            //contentLabel.attributedText = EmoticonPackages.stringToEmoticon(status!.text)
+            
             pictureView.status = status!.retweeted_Status != nil ? status!.retweeted_Status! : status
             
             //设置配图尺寸
@@ -107,9 +109,9 @@ class StatusTableViewCell: UITableViewCell {
     
     
     
-    var contentLabel: UILabel = {
+    var contentLabel: JYLabel = {
         
-        let label = UILabel.createLabel(UIColor.darkGrayColor(), font: 15)//UILabel(color:UIColor.darkGrayColor(), fontSize: 15)
+        let label = JYLabel().createJYLabel(UIColor.darkGrayColor(), font: 18)//UILabel(color:UIColor.darkGrayColor(), fontSize: 15)
         
         label.numberOfLines = 0
         

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D1603D6423216C315B0C4FAC'
+               BlueprintIdentifier = 'FBC86D77779428D3C6E163B2'
                BlueprintName = 'Pods-SwftLoveWeibo'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_SwftLoveWeibo.framework'>

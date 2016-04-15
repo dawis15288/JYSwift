@@ -171,7 +171,7 @@ class Status: NSObject {
         
     }
     
-    private class func cacheWbImage(list: [Status], completedhandler: ((modules: [Status]?, error: NSError?) -> Void)? ) {
+     private class func cacheWbImage(list: [Status], completedhandler: ((modules: [Status]?, error: NSError?) -> Void)? ) {
         
         if list.count == 0 {
         
@@ -289,8 +289,28 @@ class Status: NSObject {
                 homeURL = "\(homeURL)&max_id=\(maxID)"
             
             }
+        
             
-        Alamofire.request(.GET, homeURL).responseJSON(completionHandler: { (response) -> Void in
+        
+        weiboNetWorkTool.getWeiData(homeURL) {(moduels, error) in
+            
+            if error == nil && moduels != nil {
+                
+                if let moduels = moduels {
+                
+                   let stsues = self.status(moduels)
+                    
+                    self.cacheWbImage(stsues, completedhandler: completeionHandler)
+                    
+                }
+            
+            } else {
+            
+                completeionHandler(statuses: nil, error: error)
+            }
+        }
+            
+        /*Alamofire.request(.GET, homeURL).responseJSON(completionHandler: { (response) -> Void in
             
             if response.result.isSuccess {
                 
@@ -315,7 +335,7 @@ class Status: NSObject {
             
             }
             
-            })
+            })*/
             
             /*let request = NSURLRequest(URL: NSURL(string: homeURL)!)
             
@@ -360,40 +380,6 @@ class Status: NSObject {
             
        // }
         
-        
-    }
-    
-    class func loadWeiboCommtents() {
-        
-        let url = "https://api.weibo.com/2/comments/show.json?access_token=2.009IxytBQHYE2Be1507ea6650oRSXl&id=3955785995922241"
-        
-        if let comententURL = NSURL(string: url) {
-            
-            let request = NSURLRequest(URL: comententURL)
-            
-            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-            
-            let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-                
-                if let data = data {
-                    
-                    do {
-                        
-                        //let cmtentensJSON = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
-                        
-                        //let array = cmtentensJSON["comments"] as? [[String: AnyObject]]
-                        
-                        //print("获取大的评论是+++++++\(array!)+++++")
-                        
-                    } catch {}
-                    
-                }
-                
-            })
-            
-            task.resume()
-            
-        }
         
     }
 

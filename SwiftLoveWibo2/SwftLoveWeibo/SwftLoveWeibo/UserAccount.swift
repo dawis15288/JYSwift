@@ -85,7 +85,46 @@ class UserAccount: NSObject, NSCoding {
         
         let urlString = "https://api.weibo.com/2/users/show.json?access_token=\(access_token!)&uid=\(uid!)"
         
-        Alamofire.request(.GET, urlString).responseJSON(completionHandler: { (response) -> Void in
+        weiboNetWorkTool.getUserinfo(urlString) { (dataDict, error) in
+            
+            if error == nil && dataDict != nil {
+                
+                if  let dataDict = dataDict {
+                    
+                    self.name = dataDict["name"] as? String
+                    
+                    self.avatar_large = dataDict["avatar_large"] as? String
+                    
+                    self.userDescription = dataDict["description"] as? String
+                    
+                    self.cover_image = dataDict["cover_image"] as? String
+                    
+                    self.cover_image_phone = dataDict["cover_image_phone"] as? String
+                    
+                    self.gender = dataDict["gender"] as? String
+                    
+                    self.followers_count = dataDict["followers_count"] as? NSNumber
+                    
+                    self.friends_count = dataDict["friends_count"] as? NSNumber
+                    
+                    self.statuses_count = dataDict["statuses_count"] as? NSNumber
+                    
+                    self.favourites_count = dataDict["favourites_count"] as? NSNumber
+                    
+                    self.created_at = dataDict["created_at"] as? String
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(self.name, forKey: "userName")
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(self.avatar_large, forKey: "userAvatar_large")
+                    
+                    compeletionhandler(account: self, error: nil)
+                    
+                }
+            
+            }
+        }
+        
+        /*Alamofire.request(.GET, urlString).responseJSON(completionHandler: { (response) -> Void in
         
             if response.result.isSuccess {
                 
@@ -123,7 +162,7 @@ class UserAccount: NSObject, NSCoding {
             
             
             }
-        })
+        })*/
    
         /*if let url = NSURL(string: urlString) {
             

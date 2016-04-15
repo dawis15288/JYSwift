@@ -170,6 +170,74 @@ class EmoticonPackages: NSObject {
     
     }
     
+    private class func strToEmo(emoticonString: String?) -> Emoticon? {
+        
+        //let emoticonString = "[喵喵]"
+        
+        var emos: Emoticon?
+        
+        for package in EmoticonPackages.packageList {
+            
+            emos = package.emoticons?.filter({ (e) -> Bool in
+                
+                return e.chs == emoticonString!
+                
+            }).last
+            
+            if emos != nil {
+                
+                //emos = emo
+                
+                break
+                
+            }
+        }
+        
+        return emos
+        
+    }
+    
+    class  func stringToEmoticon(str: String?) -> NSAttributedString? {
+        
+        let strM = NSMutableAttributedString(string: str!)
+        
+        do {
+            
+            let pattern = "\\[.*?\\]"
+            
+            let regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.CaseInsensitive)
+            
+            let res = regex.matchesInString(str!, options: NSMatchingOptions(rawValue: 0), range: NSMakeRange(0, str!.characters.count))
+            
+            
+           
+            var count = res.count
+            
+            while count > 0 {
+                
+                count = count - 1
+                
+                let checkRes = res[count]
+                
+                let tempStr = (str! as NSString).substringWithRange(checkRes.range)
+                
+                if let emoticon = strToEmo(tempStr) {
+                    
+                    let attrText = EmoticonTextAttachment.imageText(emoticon, font: UIFont.systemFontOfSize(18))
+                    
+                    strM.replaceCharactersInRange(checkRes.range, withAttributedString: attrText)
+                }
+            }
+            
+        } catch {
+        
+            print(error)
+        }
+        
+        return strM
+        
+    }
+    
     
     
     func infoPath() -> String {

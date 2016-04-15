@@ -6,6 +6,8 @@ use_frameworks!
 pod 'Alamofire'
 pod 'SVProgressHUD'
 
+pod 'AFNetworking'
+
 target 'SwftLoveWeibo' do
 
 end

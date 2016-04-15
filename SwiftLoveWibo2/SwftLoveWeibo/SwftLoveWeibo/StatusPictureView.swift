@@ -188,7 +188,7 @@ private class PictureViewCell: UICollectionViewCell {
                 
                 
                 
-                iconView.contentMode = .ScaleAspectFit
+                iconView.contentMode = .ScaleToFill
                 
                 iconView.sd_setImageWithURL(imageURL)
             }

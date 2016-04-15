@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CD576C11CB6437F00B3B3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD576C01CB6437F00B3B3CE /* AppDelegate.swift */; };
+		5CD576C31CB6437F00B3B3CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD576C21CB6437F00B3B3CE /* ViewController.swift */; };
+		5CD576C61CB6437F00B3B3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD576C41CB6437F00B3B3CE /* Main.storyboard */; };
+		5CD576C81CB6437F00B3B3CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD576C71CB6437F00B3B3CE /* Assets.xcassets */; };
+		5CD576CB1CB6437F00B3B3CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD576C91CB6437F00B3B3CE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5CD576BD1CB6437F00B3B3CE /* JYLazy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JYLazy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CD576C01CB6437F00B3B3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CD576C21CB6437F00B3B3CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CD576C51CB6437F00B3B3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CD576C71CB6437F00B3B3CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CD576CA1CB6437F00B3B3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CD576CC1CB6437F00B3B3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CD576BA1CB6437F00B3B3CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CD576B41CB6437F00B3B3CE = {
+			isa = PBXGroup;
+			children = (
+				5CD576BF1CB6437F00B3B3CE /* JYLazy */,
+				5CD576BE1CB6437F00B3B3CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CD576BE1CB6437F00B3B3CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CD576BD1CB6437F00B3B3CE /* JYLazy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CD576BF1CB6437F00B3B3CE /* JYLazy */ = {
+			isa = PBXGroup;
+			children = (
+				5CD576C01CB6437F00B3B3CE /* AppDelegate.swift */,
+				5CD576C21CB6437F00B3B3CE /* ViewController.swift */,
+				5CD576C41CB6437F00B3B3CE /* Main.storyboard */,
+				5CD576C71CB6437F00B3B3CE /* Assets.xcassets */,
+				5CD576C91CB6437F00B3B3CE /* LaunchScreen.storyboard */,
+				5CD576CC1CB6437F00B3B3CE /* Info.plist */,
+			);
+			path = JYLazy;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CD576BC1CB6437F00B3B3CE /* JYLazy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CD576CF1CB6437F00B3B3CE /* Build configuration list for PBXNativeTarget "JYLazy" */;
+			buildPhases = (
+				5CD576B91CB6437F00B3B3CE /* Sources */,
+				5CD576BA1CB6437F00B3B3CE /* Frameworks */,
+				5CD576BB1CB6437F00B3B3CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JYLazy;
+			productName = JYLazy;
+			productReference = 5CD576BD1CB6437F00B3B3CE /* JYLazy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CD576B51CB6437F00B3B3CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = cyin;
+				TargetAttributes = {
+					5CD576BC1CB6437F00B3B3CE = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = JE8CSGTB5D;
+					};
+				};
+			};
+			buildConfigurationList = 5CD576B81CB6437F00B3B3CE /* Build configuration list for PBXProject "JYLazy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CD576B41CB6437F00B3B3CE;
+			productRefGroup = 5CD576BE1CB6437F00B3B3CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CD576BC1CB6437F00B3B3CE /* JYLazy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CD576BB1CB6437F00B3B3CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD576CB1CB6437F00B3B3CE /* LaunchScreen.storyboard in Resources */,
+				5CD576C81CB6437F00B3B3CE /* Assets.xcassets in Resources */,
+				5CD576C61CB6437F00B3B3CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CD576B91CB6437F00B3B3CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CD576C31CB6437F00B3B3CE /* ViewController.swift in Sources */,
+				5CD576C11CB6437F00B3B3CE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5CD576C41CB6437F00B3B3CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD576C51CB6437F00B3B3CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CD576C91CB6437F00B3B3CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CD576CA1CB6437F00B3B3CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CD576CD1CB6437F00B3B3CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5CD576CE1CB6437F00B3B3CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CD576D01CB6437F00B3B3CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JYLazy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYLazy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5CD576D11CB6437F00B3B3CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JYLazy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYLazy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CD576B81CB6437F00B3B3CE /* Build configuration list for PBXProject "JYLazy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD576CD1CB6437F00B3B3CE /* Debug */,
+				5CD576CE1CB6437F00B3B3CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CD576CF1CB6437F00B3B3CE /* Build configuration list for PBXNativeTarget "JYLazy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CD576D01CB6437F00B3B3CE /* Debug */,
+				5CD576D11CB6437F00B3B3CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CD576B51CB6437F00B3B3CE /* Project object */;
+}

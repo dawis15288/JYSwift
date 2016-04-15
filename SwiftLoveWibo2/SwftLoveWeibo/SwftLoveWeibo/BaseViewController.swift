@@ -8,13 +8,15 @@
 
 import UIKit
 
+let login: Bool = UserAccount.userLogin()
+
 class BaseViewController: UITableViewController, VisitorViewDelegate {
     
     //@IBOutlet weak var messageLabel: UILabel!
     
     let account = UserAccount.loadAccount()
     
-    let login: Bool = UserAccount.userLogin()
+    
     
     
     var visitorView: VisitorView?

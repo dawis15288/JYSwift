@@ -12,7 +12,24 @@ import Alamofire
 
 class ComposeViewController: UIViewController {
     
+    //MARK: 添加表情键盘
+    
+    private lazy var EmojiVC: EmojiViewController = EmojiViewController(callback: { [unowned self] (emotion) -> Void in
+        
+        self.textView.insetEmoticonImage(emotion)
+        
+        // 主动触发代理，隐藏提示内容！
+        
+        self.textViewDidChange(self.textView)
+        
+        
+        })
+    
+    private lazy var picVC: PictrueViewController = PictrueViewController()
+    
     var toolBarBttomconstraint: NSLayoutConstraint?
+    
+    var pictrueHeightconstraint: NSLayoutConstraint?
     
     //MARK: 加载视图
     override func viewDidLoad() {
@@ -24,6 +41,8 @@ class ComposeViewController: UIViewController {
         setupUIs()
         
         setupNav()
+        
+        setupPictrue()
         
         setupToolbar()
         
@@ -72,7 +91,11 @@ class ComposeViewController: UIViewController {
         
         super.viewDidAppear(animated)
         
-        textView.becomeFirstResponder()
+        if pictrueHeightconstraint?.constant == 0 {
+            
+            textView.becomeFirstResponder()
+        
+        }
         
         
     }
@@ -104,18 +127,40 @@ class ComposeViewController: UIViewController {
         
         view.addSubview(toolbar)
         
+        view.addSubview(alertlabel)
+        
         let width = UIScreen.mainScreen().bounds.width
+        
+        alertlabel.text = "位置https://www.jsy.com"
         
         let cns = toolbar.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: width, height: 44))
         
         toolBarBttomconstraint = toolbar.xmg_Constraint(cns, attribute: NSLayoutAttribute.Bottom)
+        
+        alertlabel.xmg_AlignVertical(type: XMG_AlignType.TopLeft, referView: toolbar, size: CGSize(width: 180, height: 31), offset: CGPoint(x: 0, y: -30))
     
     }
+    
+    //MARK: 设置图片选择视图
+    
+    private func setupPictrue() {
+        
+        addChildViewController(picVC)
+        
+        view.insertSubview(picVC.view, belowSubview: toolbar)
+        
+        let cons = picVC.view.xmg_AlignInner(type: XMG_AlignType.BottomLeft, referView: view, size: CGSize(width: mainScreenWidth, height: 0), offset: CGPoint(x: 0, y: -44))
+        
+        pictrueHeightconstraint = picVC.view.xmg_Constraint(cons, attribute: NSLayoutAttribute.Height)
+    
+    }
+    
     
     //MARK: 关闭发送微博视图
     @objc private func close(){
         
         dismissViewControllerAnimated(true, completion: nil)
+        
         
         
     }
@@ -124,39 +169,63 @@ class ComposeViewController: UIViewController {
     
     func sendWeibo(items: UIBarButtonItem) {
         
-        print(self.textView.emoticonAttributesText())
+        //
         
-        let ac = UIAlertController(title: "发送成功", message: "\(self.textView.emoticonAttributesText())", preferredStyle: UIAlertControllerStyle.Alert)
+        let status = self.textView.emoticonAttributesText()
         
-        ac.addAction(UIAlertAction(title: "ok", style: .Default, handler: nil))
-        
-        self.presentViewController(ac, animated: true, completion: nil)
-    
-        /*let request = NSMutableURLRequest(URL: NSURL(string: targetURLString)!)
-         
-         request.HTTPMethod = "GET"
-         
-         request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")*/
-        
-        
-            
-        if let weiboAccessToken = UserAccount.loadAccount()?.access_token {
-            
-           
-         //let postURLString = "https://api.weibo.com/2/statuses/update.json?access_token=\(weiboAccessToken)&status=\(textView.text)"
-            
-            /*Alamofire.request(.POST, "https://api.weibo.com/2/statuses/update.json", parameters: ["access_token": weiboAccessToken, "status": textView.text]).responseJSON(completionHandler: { (response) -> Void in
-                
-                if response.response?.statusCode == 200 {
-                
-                    let ac = UIAlertController(title: "发送成功", message: "success", preferredStyle: UIAlertControllerStyle.Alert)
-                    ac.addAction(UIAlertAction(title: "ok", style: .Default, handler: nil))
+                weiboNetWorkTool.sendWeibo(picVC.images.first, status: status, completeHandler: { (error) -> Void in
                     
-                    self.presentViewController(ac, animated: true, completion: nil)
-                }
+                    if error == nil {
+                        
+                        let ac = UIAlertController(title: "发送成功", message: "success", preferredStyle: UIAlertControllerStyle.Alert)
+                        ac.addAction(UIAlertAction(title: "ok", style: .Default, handler: nil))
+                        
+                        self.presentViewController(ac, animated: true, completion: nil)
+                        
+                    }
                 
-            })*/
-        }
+                })
+                
+              /*Alamofire.upload(.POST, "https://upload.api.weibo.com/2/statuses/upload.json", multipartFormData: { (formData) in
+                    
+                        formData.appendBodyPart(data: pic!, name: "pic", fileName: "swft.png", mimeType: "application/octet-stream")
+                
+                        formData.appendBodyPart(data: weiboAccessToken.dataUsingEncoding(NSUTF8StringEncoding)!, name: "access_token")
+                
+                    let status = self.textView.emoticonAttributesText()
+                
+                        formData.appendBodyPart(data: status.dataUsingEncoding(NSUTF8StringEncoding)!, name: "status")
+                    
+                    }, encodingCompletion: { ( encodingResult) in
+                        
+                        switch encodingResult {
+                            
+                        case .Success(let upload, _, _):
+                            
+                            upload.responseJSON { response in
+                                debugPrint(response.result.value)
+                            }
+                        case .Failure(let encodingError):
+                            print(encodingError)
+                        }
+                        
+                })*/
+                
+                
+            
+            /*Alamofire.request(.POST, "https://api.weibo.com/2/statuses/update.json", parameters: ["access_token": weiboAccessToken, "status": textView.emoticonAttributesText()]).responseJSON(completionHandler: { (response) -> Void in
+                    
+                    
+                
+                    if response.response?.statusCode == 200 {
+                
+                        let ac = UIAlertController(title: "发送成功", message: "\(response.request?.HTTPBody)", preferredStyle: UIAlertControllerStyle.Alert)
+                        ac.addAction(UIAlertAction(title: "ok", style: .Default, handler: nil))
+                    
+                        self.presentViewController(ac, animated: true, completion: nil)
+                    }
+                
+                })*/
     
     }
     
@@ -175,6 +244,9 @@ class ComposeViewController: UIViewController {
         
         
         placeholdLabel.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: textView, size: nil, offset: CGPoint(x: 5, y: 8))
+        
+        
+        
     }
 //MARK: 内存警告
     override func didReceiveMemoryWarning() {
@@ -216,6 +288,11 @@ class ComposeViewController: UIViewController {
         return label
     
     }()
+    
+    //MARK: 字数提醒
+    
+    private lazy var alertlabel: JYLabel = JYLabel()
+    
     //MARK: 初始化导航栏标题
     private lazy var titleView: UIView = {
         
@@ -276,11 +353,9 @@ class ComposeViewController: UIViewController {
         
         for dict in itemSettings {
             
-            let image = UIImage(named: dict["imageName"]!)
+            let item = UIBarButtonItem(imageName: dict["imageName"]!, target: self, action: dict["action"])
             
-            
-            
-            let item = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: #selector(selectPicture(_:)))
+            //#selector(selectPicture(_:))
             
             item.tag = itemTag
             
@@ -299,10 +374,19 @@ class ComposeViewController: UIViewController {
         return toolbar
     
     }()
+    
     //MARK: 工具条item执行的action
-    @objc private func selectPicture(item: UIBarButtonItem) {
+    @objc private func selectPicture() {
         
-        print("当前点击的item是\(item.tag)")
+        textView.resignFirstResponder()
+        
+       pictrueHeightconstraint?.constant = UIScreen.mainScreen().bounds.height * 0.6
+        
+        view.layoutIfNeeded()
+        
+    }
+    
+    @objc private func inputEmoticon() {
         
         textView.resignFirstResponder()
         
@@ -311,21 +395,12 @@ class ComposeViewController: UIViewController {
         textView.inputView = (textView.inputView == nil) ? EmojiVC.view : nil
         
         textView.becomeFirstResponder()
-        
-        
+    
     }
     
-    //MARK: 添加表情键盘
-   
-    private lazy var EmojiVC: EmojiViewController = EmojiViewController(callback: { [unowned self] (emotion) -> Void in
-        
-            self.textView.insetEmoticonImage(emotion)
-        
-        // 主动触发代理，隐藏提示内容！
-        
-            self.textViewDidChange(self.textView)
-        
-        })
+    let maxTips = 10
+    
+    //private  lazy var EmoticonPictrue: EmoticonPictrueCollectionView = EmoticonPictrueCollectionView(frame: CGRectZero, collectionViewLayout: EmoticonPictrueFlowLayout())
 }
 
 //MARK: 扩展类，实现textV的代理方法
@@ -338,6 +413,15 @@ extension ComposeViewController: UITextViewDelegate {
              placeholdLabel.hidden = true
             
             navigationItem.rightBarButtonItem?.enabled = true
+            
+            let count = textView.text.characters.count
+            
+            if (maxTips - count) < 0 {
+            
+                alertlabel.textColor = UIColor.redColor()
+                
+                alertlabel.text = "\(maxTips - count)"
+            }
             
         }
         
