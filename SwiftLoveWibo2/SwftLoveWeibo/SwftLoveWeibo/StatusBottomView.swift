@@ -9,6 +9,35 @@
 import UIKit
 
 class StatusBottomView: UIView {
+    
+    var bttmstatus: [String: Int]? {
+        
+        didSet {
+            
+            if bttmstatus!["reposts_count"]! > 0 {
+                
+                    retweetButton.setTitle("\(bttmstatus!["reposts_count"]!)", forState: UIControlState.Normal)
+                }
+                
+                
+            if bttmstatus!["comments_count"] > 0 {
+            
+                commonButton.setTitle("\(bttmstatus!["comments_count"]!)", forState: UIControlState.Normal)
+            
+            }
+                
+                    
+            if bttmstatus!["attitudes_count"] > 0 {
+            
+                unLikeButton.setTitle("\(bttmstatus!["attitudes_count"]!)", forState: UIControlState.Normal)
+                
+            }
+            
+            
+            
+        }
+    
+    }
 
     override init(frame: CGRect) {
         
@@ -35,12 +64,55 @@ class StatusBottomView: UIView {
         
     }
     
-    private lazy var retweetButton: UIButton = UIButton.createButton("timeline_icon_unlike", title: "转发")
+    private lazy var retweetButton: UIButton = {
+    
+        let buttn = UIButton.createButton("timeline_icon_retweet", title: "转发")
+        
+        buttn.addTarget(self, action: #selector(retweet), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return buttn
+    
+    }()
     
     
-    private lazy var unLikeButton: UIButton = UIButton.createButton("timeline_icon_unlike", title: "赞")
+    private lazy var commonButton: UIButton = {
+        
+        let buttn = UIButton.createButton("timeline_icon_comment", title: "评论")
+        
+        buttn.addTarget(self, action: #selector(comment), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return buttn
+        
+    }()
+    
+    //
+    
+    private lazy var unLikeButton: UIButton = {
+        
+        let buttn = UIButton.createButton("timeline_icon_unlike", title: "赞")
+        
+        buttn.addTarget(self, action: #selector(unlike), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return buttn
+        
+    }()
+    
+    func retweet() {
+        
+        #function
+        
+    }
+    
+    func comment() {
+        #function
+        
+    }
+    
+    func unlike() {
+        #function
+        
+    }
     
     
-    private lazy var commonButton: UIButton = UIButton.createButton("timeline_icon_comment", title: "评论")
 
 }

@@ -8,6 +8,7 @@
 
 import Alamofire
 
+import SDWebImage
 
 class weiboNetWorkTool {
     
@@ -155,6 +156,138 @@ class weiboNetWorkTool {
     }
     
     
+    class func loadStatuses(since_id: Int, max_id: Int ,weiboAccessToken: String, completeionHandler: ((statuses: [Status]?, error: NSError?) -> Void)) {
+        
+        var homeURL = "https://api.weibo.com/2/statuses/home_timeline.json?access_token=\(weiboAccessToken)"
+        
+        if since_id > 0 {
+            
+            homeURL = "\(homeURL)&since_id=\(since_id)"
+            
+        }
+        
+        if max_id > 0 {
+            
+            //为了避免获取到重复的微博数据 max_id - 1
+            
+            let maxID = max_id - 1
+            
+            homeURL = "\(homeURL)&max_id=\(maxID)"
+            
+        }
+        
+        
+        
+        weiboNetWorkTool.getWeiData(homeURL) {(moduels, error) in
+            
+            if error == nil && moduels != nil {
+                
+                if let moduels = moduels {
+                    
+                    let stsues = Status.status(moduels)
+                    
+                    
+                    
+                    //Status.cacheWbImage(stsues, completedhandler: completeionHandler)
+                    
+                    self.cacheWbImage(stsues, completedhandler: completeionHandler)
+                    
+                }
+                
+            } else {
+                
+                completeionHandler(statuses: nil, error: error)
+            }
+        }
+        
+        
+    }
     
+    // completedhandler: ((modules: [Status]?, error: NSError?) -> Void)?
+    
+    class func cacheWbImage(list: [Status], completedhandler: ((modules: [Status]?, error: NSError?) -> Void)?) {
+        
+        if list.count == 0 {
+            
+            completedhandler!(modules: list, error: nil)
+            
+            return
+            
+        }
+        
+        let group = dispatch_group_create()
+        
+        for status in list {
+            
+            
+            
+            //guard let _ = status.stordPictureURLs else { continue }
+            
+            if let urlArray = status.repic_urls {
+                
+                for url in urlArray {
+                    
+                    dispatch_group_enter(group)
+                    
+                    SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (_, _, _, _, _) -> Void in
+                        
+                        dispatch_group_leave(group)
+                        
+                    })
+                    
+                }
+                
+            }
+            
+            dispatch_group_notify(group, dispatch_get_main_queue(), { () -> Void in
+                
+                completedhandler!(modules: list, error: nil)
+                
+            })
+            
+        }
+        
+    }
+    
+    //https://api.weibo.com/2/comments/show.json
+    
+    class func loadComments(weiboAccessToken: String, webId: Int, completedhandler: ((modules: [Comments]?, error: NSError?) -> Void)?) {
+        
+        let commentsURL = "https://api.weibo.com/2/comments/show.json?access_token=\(weiboAccessToken)&id=\(webId)"
+        
+        
+    
+        Alamofire.request(.GET, commentsURL).responseJSON(completionHandler: { (response) -> Void in
+            
+            if response.result.isSuccess {
+                
+                
+                if let data = response.data {
+                    
+                    do {
+                        
+                        let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)
+                        
+                        let comments = json["comments"] as! [[String: AnyObject]]
+                        
+                        let cmment = Comments.model2Comments(comments)
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            
+                            completedhandler!(modules: cmment, error:  nil )
+                            
+                        })
+                        
+                        
+                        
+                    
+                    } catch {}
+                
+                }
+            
+            }
+        })
+        
+    }
     
 }

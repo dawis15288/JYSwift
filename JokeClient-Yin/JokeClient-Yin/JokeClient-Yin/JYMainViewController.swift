@@ -73,7 +73,7 @@ class JYMainViewController: UITabBarController {
         
         let count = self.itemArray.count
         
-        for var index = 0; index < count; index++ {
+        for  index in 0..<count {
             
             let btnWidth = (CGFloat)(index * 80)
             
@@ -91,7 +91,7 @@ class JYMainViewController: UITabBarController {
             
             button.setTitleColor(tabBarBGColor, forState: .Selected)
             
-            button.addTarget(self, action: "tabBarButtonClicked:", forControlEvents: .TouchUpInside)
+            button.addTarget(self, action: #selector(JYMainViewController.tabBarButtonClicked(_:)), forControlEvents: .TouchUpInside)
             
             self.myTabBar?.addSubview(button)
             
@@ -128,7 +128,7 @@ class JYMainViewController: UITabBarController {
         
         let index = sender.tag
         
-        for var i = 0; i < 4; i++ {
+        for i in 0..<4 {
             
             let button = self.view.viewWithTag(i + 100) as! UIButton
             

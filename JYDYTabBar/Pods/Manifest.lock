@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.3.1)
+  - MJRefresh (3.1.0)
+  - MLSwiftBasic (1.1.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - MJRefresh
+  - MLSwiftBasic
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  MLSwiftBasic: 97860c0e55eada4eace1494429f02bd93f267c11
+
+COCOAPODS: 0.39.0

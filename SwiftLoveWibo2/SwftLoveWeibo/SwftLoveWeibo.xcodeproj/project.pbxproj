@@ -82,6 +82,9 @@
 		5CBD70011C46659100926A93 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBD70001C46659100926A93 /* libz.tbd */; };
 		5CBD70031C4665B900926A93 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CBD70021C4665B900926A93 /* libsqlite3.tbd */; };
 		5CBD70051C466AF600926A93 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CBD70041C466AF600926A93 /* Default-568h@2x.png */; };
+		5CC2BF7F1CC9EF0900004381 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2BF7E1CC9EF0900004381 /* Comments.swift */; };
+		5CC2BF811CCBA40500004381 /* CmmentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2BF801CCBA40500004381 /* CmmentUser.swift */; };
+		5CC2BF831CCBA45A00004381 /* CmmentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC2BF821CCBA45A00004381 /* CmmentStatus.swift */; };
 		5CCDB3F11C96734B00507BAC /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB3F01C96734B00507BAC /* QRCodeViewController.swift */; };
 		5CCDB3F31C96AA5400507BAC /* QRCodViewControllerCatgroy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCDB3F21C96AA5400507BAC /* QRCodViewControllerCatgroy.swift */; };
 		5CCEA11F1C9957010080CF34 /* NewFeatureViewControllerCatery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCEA11E1C9957010080CF34 /* NewFeatureViewControllerCatery.swift */; };
@@ -184,6 +187,9 @@
 		5CBD70001C46659100926A93 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		5CBD70021C4665B900926A93 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5CBD70041C466AF600926A93 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5CC2BF7E1CC9EF0900004381 /* Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		5CC2BF801CCBA40500004381 /* CmmentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CmmentUser.swift; sourceTree = "<group>"; };
+		5CC2BF821CCBA45A00004381 /* CmmentStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CmmentStatus.swift; sourceTree = "<group>"; };
 		5CCDB3F01C96734B00507BAC /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		5CCDB3F21C96AA5400507BAC /* QRCodViewControllerCatgroy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodViewControllerCatgroy.swift; sourceTree = "<group>"; };
 		5CCEA11E1C9957010080CF34 /* NewFeatureViewControllerCatery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewControllerCatery.swift; sourceTree = "<group>"; };
@@ -290,8 +296,6 @@
 				5CCDB3EF1C96732C00507BAC /* SCanQRCode */,
 				5C71EA581C94305F00B0B77D /* Popover */,
 				5C5CE5E01C65A38B0051C36F /* HomeViewController.swift */,
-				5CE193171C8C619E00EA3E70 /* Status.swift */,
-				5CE193191C8DBC9800EA3E70 /* User.swift */,
 				5CE1931B1C8DBFBF00EA3E70 /* StatusTableViewCell.swift */,
 				5C6D74FF1C91385F001C71EE /* StatusPictureView.swift */,
 				5C6D75011C914F73001C71EE /* StatusTopView.swift */,
@@ -443,6 +447,7 @@
 		5CBD6FC71C46617300926A93 /* SwftLoveWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				5CE84FBF1CC62719001F8A97 /* Model */,
 				5C5BB0B81C704E02006FF278 /* Classes */,
 				5CBD6FC81C46617300926A93 /* AppDelegate.swift */,
 				5CBD6FCA1C46617300926A93 /* ViewController.swift */,
@@ -488,6 +493,18 @@
 				5CCDB3F21C96AA5400507BAC /* QRCodViewControllerCatgroy.swift */,
 			);
 			name = SCanQRCode;
+			sourceTree = "<group>";
+		};
+		5CE84FBF1CC62719001F8A97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CE193171C8C619E00EA3E70 /* Status.swift */,
+				5CE193191C8DBC9800EA3E70 /* User.swift */,
+				5CC2BF7E1CC9EF0900004381 /* Comments.swift */,
+				5CC2BF801CCBA40500004381 /* CmmentUser.swift */,
+				5CC2BF821CCBA45A00004381 /* CmmentStatus.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		6B436C4C70F750922DEF1B84 /* Frameworks */ = {
@@ -671,10 +688,13 @@
 				5C6D75021C914F73001C71EE /* StatusTopView.swift in Sources */,
 				5C5CE5E71C65A97F0051C36F /* ProfileViewController.swift in Sources */,
 				5C5A57CF1C47E79800382E5E /* WeiboModal.swift in Sources */,
+				5CC2BF831CCBA45A00004381 /* CmmentStatus.swift in Sources */,
 				5C2DDA401C6834D40041D732 /* BaseViewController.swift in Sources */,
 				5C6661661CA6213A004BA928 /* EmoticonPackages.swift in Sources */,
+				5CC2BF811CCBA40500004381 /* CmmentUser.swift in Sources */,
 				5C5CE5E31C65A9160051C36F /* MessageViewController.swift in Sources */,
 				5CEBECB91C47326B00F50EBC /* WebViewController.swift in Sources */,
+				5CC2BF7F1CC9EF0900004381 /* Comments.swift in Sources */,
 				5C2DDA3E1C6822DD0041D732 /* VisitorView.swift in Sources */,
 				5C5BB0C11C7052A7006FF278 /* TitleButton.swift in Sources */,
 				5CB7B8781C71CBFE00E23698 /* UIImageView+Category.swift in Sources */,

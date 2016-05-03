@@ -44,7 +44,7 @@ class EmoticoPictrueCell: UICollectionViewCell {
     var image: UIImage? {
         
         didSet {
-            
+                 
             //removePictrue
             
             if image != nil {

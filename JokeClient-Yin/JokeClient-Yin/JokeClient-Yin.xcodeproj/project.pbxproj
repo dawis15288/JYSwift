@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0C68481CC8DF8400AB162D /* StatusTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0C68471CC8DF8400AB162D /* StatusTopView.swift */; };
+		5C0C684A1CC8E3FB00AB162D /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0C68491CC8E3FB00AB162D /* UIView+AutoLayout.swift */; };
 		5C337D831C4DEAB20069EC96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C337D821C4DEAB20069EC96 /* AppDelegate.swift */; };
 		5C337D851C4DEAB20069EC96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C337D841C4DEAB20069EC96 /* ViewController.swift */; };
 		5C337D881C4DEAB20069EC96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C337D861C4DEAB20069EC96 /* Main.storyboard */; };
@@ -28,16 +30,27 @@
 		5C38956E1C4E644A007A856B /* CYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C38956C1C4E644A007A856B /* CYTableViewCell.swift */; };
 		5C38956F1C4E644A007A856B /* CYTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C38956D1C4E644A007A856B /* CYTableViewCell.xib */; };
 		5C62D0AF1C4F804E00E4387F /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C62D0AE1C4F804E00E4387F /* UIViewExt.swift */; };
+		5CA474861CC7B7E7000F6F48 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA474851CC7B7E7000F6F48 /* Comments.swift */; };
+		5CA474881CC7B8D9000F6F48 /* CommentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA474871CC7B8D9000F6F48 /* CommentUser.swift */; };
 		5CCC15A91C50C3D10054B4C3 /* JYCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15A71C50C3D10054B4C3 /* JYCommentCell.swift */; };
 		5CCC15AA1C50C3D10054B4C3 /* JYCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCC15A81C50C3D10054B4C3 /* JYCommentCell.xib */; };
 		5CCC15AC1C50D3530054B4C3 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15AB1C50D3530054B4C3 /* UIViewControllerExt.swift */; };
 		5CCC15AE1C50F8340054B4C3 /* FileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15AD1C50F8340054B4C3 /* FileUtility.swift */; };
 		5CCC15B11C50FFB80054B4C3 /* JYContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCC15AF1C50FFB80054B4C3 /* JYContentCell.swift */; };
 		5CCC15B21C50FFB80054B4C3 /* JYContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CCC15B01C50FFB80054B4C3 /* JYContentCell.xib */; };
+		5CE1732F1CC8CC270011A723 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE1732E1CC8CC270011A723 /* StatusTableViewCell.swift */; };
+		5CE173311CC8CEC90011A723 /* JYAutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173301CC8CEC90011A723 /* JYAutoLayout.swift */; };
+		5CE173331CC8D11A0011A723 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173321CC8D11A0011A723 /* BottomView.swift */; };
+		5CE173351CC8D19C0011A723 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE173341CC8D19C0011A723 /* UIButton+Category.swift */; };
 		5CF8C7D41C4F6E8D0009F692 /* UIImageViewWebExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF8C7D31C4F6E8D0009F692 /* UIImageViewWebExt.swift */; };
+		5CF9BB271CC62E6600EAD651 /* Statues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF9BB261CC62E6600EAD651 /* Statues.swift */; };
+		5CF9BB291CC632D100EAD651 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF9BB281CC632D100EAD651 /* User.swift */; };
+		5CF9BB2B1CC6333C00EAD651 /* Votes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF9BB2A1CC6333C00EAD651 /* Votes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C0C68471CC8DF8400AB162D /* StatusTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTopView.swift; sourceTree = "<group>"; };
+		5C0C68491CC8E3FB00AB162D /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		5C337D7F1C4DEAB20069EC96 /* JokeClient-Yin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JokeClient-Yin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C337D821C4DEAB20069EC96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C337D841C4DEAB20069EC96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,13 +74,22 @@
 		5C38956C1C4E644A007A856B /* CYTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYTableViewCell.swift; sourceTree = "<group>"; };
 		5C38956D1C4E644A007A856B /* CYTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYTableViewCell.xib; sourceTree = "<group>"; };
 		5C62D0AE1C4F804E00E4387F /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		5CA474851CC7B7E7000F6F48 /* Comments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		5CA474871CC7B8D9000F6F48 /* CommentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentUser.swift; sourceTree = "<group>"; };
 		5CCC15A71C50C3D10054B4C3 /* JYCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYCommentCell.swift; sourceTree = "<group>"; };
 		5CCC15A81C50C3D10054B4C3 /* JYCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYCommentCell.xib; sourceTree = "<group>"; };
 		5CCC15AB1C50D3530054B4C3 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		5CCC15AD1C50F8340054B4C3 /* FileUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUtility.swift; sourceTree = "<group>"; };
 		5CCC15AF1C50FFB80054B4C3 /* JYContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYContentCell.swift; sourceTree = "<group>"; };
 		5CCC15B01C50FFB80054B4C3 /* JYContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JYContentCell.xib; sourceTree = "<group>"; };
+		5CE1732E1CC8CC270011A723 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		5CE173301CC8CEC90011A723 /* JYAutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYAutoLayout.swift; sourceTree = "<group>"; };
+		5CE173321CC8D11A0011A723 /* BottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		5CE173341CC8D19C0011A723 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
 		5CF8C7D31C4F6E8D0009F692 /* UIImageViewWebExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewWebExt.swift; sourceTree = "<group>"; };
+		5CF9BB261CC62E6600EAD651 /* Statues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Statues.swift; sourceTree = "<group>"; };
+		5CF9BB281CC632D100EAD651 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5CF9BB2A1CC6333C00EAD651 /* Votes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Votes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +144,16 @@
 				5CCC15A81C50C3D10054B4C3 /* JYCommentCell.xib */,
 				5CCC15AF1C50FFB80054B4C3 /* JYContentCell.swift */,
 				5CCC15B01C50FFB80054B4C3 /* JYContentCell.xib */,
+				5CF9BB261CC62E6600EAD651 /* Statues.swift */,
+				5CF9BB281CC632D100EAD651 /* User.swift */,
+				5CF9BB2A1CC6333C00EAD651 /* Votes.swift */,
+				5CA474851CC7B7E7000F6F48 /* Comments.swift */,
+				5CA474871CC7B8D9000F6F48 /* CommentUser.swift */,
+				5CE1732E1CC8CC270011A723 /* StatusTableViewCell.swift */,
+				5CE173301CC8CEC90011A723 /* JYAutoLayout.swift */,
+				5CE173321CC8D11A0011A723 /* BottomView.swift */,
+				5CE173341CC8D19C0011A723 /* UIButton+Category.swift */,
+				5C0C68471CC8DF8400AB162D /* StatusTopView.swift */,
 			);
 			path = "JokeClient-Yin";
 			sourceTree = "<group>";
@@ -138,6 +170,7 @@
 		5C3895631C4E3414007A856B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				5C0C68491CC8E3FB00AB162D /* UIView+AutoLayout.swift */,
 				5CCC15AB1C50D3530054B4C3 /* UIViewControllerExt.swift */,
 				5C3895611C4E1A85007A856B /* JYHttprRequest.swift */,
 				5C3895641C4E3455007A856B /* NSDictionaryExt.swift */,
@@ -231,19 +264,30 @@
 				5C337D851C4DEAB20069EC96 /* ViewController.swift in Sources */,
 				5C38956E1C4E644A007A856B /* CYTableViewCell.swift in Sources */,
 				5C3895671C4E5438007A856B /* NSStringExt.swift in Sources */,
+				5CE1732F1CC8CC270011A723 /* StatusTableViewCell.swift in Sources */,
+				5C0C68481CC8DF8400AB162D /* StatusTopView.swift in Sources */,
+				5CF9BB271CC62E6600EAD651 /* Statues.swift in Sources */,
+				5CE173331CC8D11A0011A723 /* BottomView.swift in Sources */,
 				5C337D971C4DF1170069EC96 /* JYJokeTableViewController.swift in Sources */,
 				5CCC15A91C50C3D10054B4C3 /* JYCommentCell.swift in Sources */,
 				5C38956B1C4E5891007A856B /* JYImageViewController.swift in Sources */,
 				5CCC15AE1C50F8340054B4C3 /* FileUtility.swift in Sources */,
+				5CF9BB291CC632D100EAD651 /* User.swift in Sources */,
 				5C3895691C4E57B8007A856B /* JYCommentsViewController.swift in Sources */,
 				5C337D951C4DEAEC0069EC96 /* JYMainViewController.swift in Sources */,
 				5CCC15B11C50FFB80054B4C3 /* JYContentCell.swift in Sources */,
+				5CA474881CC7B8D9000F6F48 /* CommentUser.swift in Sources */,
 				5C3895521C4DF300007A856B /* JYAboutViewController.swift in Sources */,
+				5CE173311CC8CEC90011A723 /* JYAutoLayout.swift in Sources */,
 				5C337D831C4DEAB20069EC96 /* AppDelegate.swift in Sources */,
 				5CCC15AC1C50D3530054B4C3 /* UIViewControllerExt.swift in Sources */,
+				5CE173351CC8D19C0011A723 /* UIButton+Category.swift in Sources */,
+				5CA474861CC7B7E7000F6F48 /* Comments.swift in Sources */,
 				5CF8C7D41C4F6E8D0009F692 /* UIImageViewWebExt.swift in Sources */,
 				5C3895651C4E3455007A856B /* NSDictionaryExt.swift in Sources */,
 				5C3895621C4E1A85007A856B /* JYHttprRequest.swift in Sources */,
+				5C0C684A1CC8E3FB00AB162D /* UIView+AutoLayout.swift in Sources */,
+				5CF9BB2B1CC6333C00EAD651 /* Votes.swift in Sources */,
 				5C62D0AF1C4F804E00E4387F /* UIViewExt.swift in Sources */,
 				5C3895551C4E0DCD007A856B /* JYRefreshView.swift in Sources */,
 			);

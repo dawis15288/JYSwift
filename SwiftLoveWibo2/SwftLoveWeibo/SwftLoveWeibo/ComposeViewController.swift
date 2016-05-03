@@ -18,7 +18,7 @@ class ComposeViewController: UIViewController {
         
         self.textView.insetEmoticonImage(emotion)
         
-        // 主动触发代理，隐藏提示内容！
+        // 主动触发代理，隐藏提示内容xc
         
         self.textViewDidChange(self.textView)
         

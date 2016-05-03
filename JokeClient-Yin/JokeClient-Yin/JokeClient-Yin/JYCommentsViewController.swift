@@ -17,13 +17,13 @@ class JYCommentsViewController: UIViewController, UITableViewDataSource, UITable
     
     var tableView: UITableView?
     
-    var dataArray = NSMutableArray()
+    var dataArray: [Comments]?
     
     var page: Int = 1
     
     var refreshView: JYRefreshViewController?
     
-    var jokeId: String!
+    var jokeId: String?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         
@@ -85,16 +85,14 @@ class JYCommentsViewController: UIViewController, UITableViewDataSource, UITable
     
     func loadData() {
         
-        let url = "http://m2.qiushibaike.com/article/\(self.jokeId)/comments?count=20&page=\(self.page)"
+        let url = "http://m2.qiushibaike.com/article/\(self.jokeId!)/comments?count=20&page=\(self.page)"
         
         self.refreshView?.startLoadng()
         
         JYHttprRequest.requestWithURL(url, completionHandler: { data in
             
             
-            if data as! NSObject == NSNull() {
-                
-                //alert
+            if data == nil {
                 
                 self.presentViewController(UIView.showAlertView("提示", message: "加载失败！"), animated: true, completion: { () -> Void in
                     
@@ -106,9 +104,13 @@ class JYCommentsViewController: UIViewController, UITableViewDataSource, UITable
             
             }
             
-            let arr = data["items"] as! NSArray
+            if let arr = data {
             
-            if arr.count == 0 {
+                self.dataArray = Comments.model2comment(arr)
+                
+            }
+            
+            if self.dataArray!.count == 0 {
                 
                 self.presentViewController(UIView.showAlertView("提示", message: "暂是没有新评论！"), animated: true, completion: { () -> Void in
                     
@@ -120,17 +122,11 @@ class JYCommentsViewController: UIViewController, UITableViewDataSource, UITable
             
             }
             
-            for data: AnyObject in arr {
-                
-                self.dataArray.addObject(data)
-            
-            }
-            
             self.tableView?.reloadData()
             
             self.refreshView?.stopLoading()
             
-            self.page++
+            self.page += self.page
         
         })
     
@@ -145,7 +141,7 @@ class JYCommentsViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.dataArray.count
+        return self.dataArray?.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -154,7 +150,7 @@ class JYCommentsViewController: UIViewController, UITableViewDataSource, UITable
         
         let index = indexPath.row
         
-        let data = self.dataArray[index] as! NSDictionary
+        let data = self.dataArray![index]
         
         cell!.data = data
         
@@ -166,7 +162,7 @@ class JYCommentsViewController: UIViewController, UITableViewDataSource, UITable
         
         let index = indexPath.row
         
-        let data = self.dataArray[index] as! NSDictionary
+        let data = self.dataArray![index]
         
         return JYCommentCell.cellHeightByData(data)
     }

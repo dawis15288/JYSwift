@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CB1B6BD1CC51DC800DF178E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B6BC1CC51DC800DF178E /* AppDelegate.swift */; };
+		5CB1B6BF1CC51DC800DF178E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B6BE1CC51DC800DF178E /* ViewController.swift */; };
+		5CB1B6C21CC51DC800DF178E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB1B6C01CC51DC800DF178E /* Main.storyboard */; };
+		5CB1B6C41CC51DC800DF178E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CB1B6C31CC51DC800DF178E /* Assets.xcassets */; };
+		5CB1B6C71CC51DC800DF178E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CB1B6C51CC51DC800DF178E /* LaunchScreen.storyboard */; };
+		5CB1B6CF1CC51E2400DF178E /* JYTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1B6CE1CC51E2400DF178E /* JYTabBarViewController.swift */; };
+		5CB1B6D11CC51E9600DF178E /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CB1B6D01CC51E9600DF178E /* MainVCSettings.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5CB1B6B91CC51DC800DF178E /* JY-自定义tabbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JY-自定义tabbar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CB1B6BC1CC51DC800DF178E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CB1B6BE1CC51DC800DF178E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5CB1B6C11CC51DC800DF178E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5CB1B6C31CC51DC800DF178E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CB1B6C61CC51DC800DF178E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CB1B6C81CC51DC800DF178E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CB1B6CE1CC51E2400DF178E /* JYTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYTabBarViewController.swift; sourceTree = "<group>"; };
+		5CB1B6D01CC51E9600DF178E /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CB1B6B61CC51DC800DF178E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5CB1B6B01CC51DC800DF178E = {
+			isa = PBXGroup;
+			children = (
+				5CB1B6BB1CC51DC800DF178E /* JYDYtabbar */,
+				5CB1B6BA1CC51DC800DF178E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5CB1B6BA1CC51DC800DF178E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CB1B6B91CC51DC800DF178E /* JY-自定义tabbar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CB1B6BB1CC51DC800DF178E /* JYDYtabbar */ = {
+			isa = PBXGroup;
+			children = (
+				5CB1B6BC1CC51DC800DF178E /* AppDelegate.swift */,
+				5CB1B6BE1CC51DC800DF178E /* ViewController.swift */,
+				5CB1B6C01CC51DC800DF178E /* Main.storyboard */,
+				5CB1B6C31CC51DC800DF178E /* Assets.xcassets */,
+				5CB1B6C51CC51DC800DF178E /* LaunchScreen.storyboard */,
+				5CB1B6C81CC51DC800DF178E /* Info.plist */,
+				5CB1B6CE1CC51E2400DF178E /* JYTabBarViewController.swift */,
+				5CB1B6D01CC51E9600DF178E /* MainVCSettings.json */,
+			);
+			name = JYDYtabbar;
+			path = "JY-自定义tabbar";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CB1B6B81CC51DC800DF178E /* JY-自定义tabbar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CB1B6CB1CC51DC800DF178E /* Build configuration list for PBXNativeTarget "JY-自定义tabbar" */;
+			buildPhases = (
+				5CB1B6B51CC51DC800DF178E /* Sources */,
+				5CB1B6B61CC51DC800DF178E /* Frameworks */,
+				5CB1B6B71CC51DC800DF178E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JY-自定义tabbar";
+			productName = "JY-自定义tabbar";
+			productReference = 5CB1B6B91CC51DC800DF178E /* JY-自定义tabbar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CB1B6B11CC51DC800DF178E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = cyin;
+				TargetAttributes = {
+					5CB1B6B81CC51DC800DF178E = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = JE8CSGTB5D;
+					};
+				};
+			};
+			buildConfigurationList = 5CB1B6B41CC51DC800DF178E /* Build configuration list for PBXProject "JYDYtabbar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CB1B6B01CC51DC800DF178E;
+			productRefGroup = 5CB1B6BA1CC51DC800DF178E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CB1B6B81CC51DC800DF178E /* JY-自定义tabbar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CB1B6B71CC51DC800DF178E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CB1B6C71CC51DC800DF178E /* LaunchScreen.storyboard in Resources */,
+				5CB1B6C41CC51DC800DF178E /* Assets.xcassets in Resources */,
+				5CB1B6D11CC51E9600DF178E /* MainVCSettings.json in Resources */,
+				5CB1B6C21CC51DC800DF178E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CB1B6B51CC51DC800DF178E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CB1B6BF1CC51DC800DF178E /* ViewController.swift in Sources */,
+				5CB1B6BD1CC51DC800DF178E /* AppDelegate.swift in Sources */,
+				5CB1B6CF1CC51E2400DF178E /* JYTabBarViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5CB1B6C01CC51DC800DF178E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CB1B6C11CC51DC800DF178E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5CB1B6C51CC51DC800DF178E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CB1B6C61CC51DC800DF178E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CB1B6C91CC51DC800DF178E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5CB1B6CA1CC51DC800DF178E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CB1B6CC1CC51DC800DF178E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "JY-自定义tabbar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYTabBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5CB1B6CD1CC51DC800DF178E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "JY-自定义tabbar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.cyin.JYTabBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CB1B6B41CC51DC800DF178E /* Build configuration list for PBXProject "JYDYtabbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CB1B6C91CC51DC800DF178E /* Debug */,
+				5CB1B6CA1CC51DC800DF178E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CB1B6CB1CC51DC800DF178E /* Build configuration list for PBXNativeTarget "JY-自定义tabbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CB1B6CC1CC51DC800DF178E /* Debug */,
+				5CB1B6CD1CC51DC800DF178E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CB1B6B11CC51DC800DF178E /* Project object */;
+}

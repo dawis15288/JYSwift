@@ -1,0 +1,6 @@
+framework module Pods_JY500pxProject {
+  umbrella header "Pods-JY500pxProject-umbrella.h"
+
+  export *
+  module * { export * }
+}

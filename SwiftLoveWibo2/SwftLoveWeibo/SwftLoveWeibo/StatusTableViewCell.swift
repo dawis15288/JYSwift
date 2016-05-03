@@ -26,7 +26,6 @@ class StatusTableViewCell: UITableViewCell {
             
             topView.status = status
             
-            
             contentLabel.text = status!.text
             
             //contentLabel.attributedText = EmoticonPackages.stringToEmoticon(status!.text)
@@ -47,6 +46,17 @@ class StatusTableViewCell: UITableViewCell {
             
             pictrueTopCons?.constant = size.viewSize.height == 0 ? 0 : 10
             
+           
+            /*reposts_count	int	转发数
+             comments_count	int	评论数
+             attitudes_count	int	表态数
+             ("")
+             
+             */
+            
+            footerView.bttmstatus = Status.footerData(status!.reposts_count, comments_count: status!.comments_count, attitudes_count: status!.attitudes_count)
+            
+            //print("\(status!.reposts_count)转发数 -- \(status!.comments_count)评论数--\(status!.attitudes_count)表态数--\(status!.comments?.count) --- \(status!.comments?.first?.text)")
             
         
         }

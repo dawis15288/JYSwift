@@ -51,6 +51,8 @@ class HomeViewController: BaseViewController {
     
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -124,8 +126,6 @@ class HomeViewController: BaseViewController {
     
     func loadData() {
         
-       
-        
         if let weiboAccessToken = UserAccount.loadAccount()?.access_token {
             
             var since_id = statues?.first?.id ?? 0
@@ -139,9 +139,54 @@ class HomeViewController: BaseViewController {
                 max_id = statues?.last?.id ?? 0
             
             }
+            
+            
+            
+            weiboNetWorkTool.loadStatuses(since_id, max_id: max_id, weiboAccessToken: weiboAccessToken, completeionHandler: { (status, error) in
+                
+                
+                if status != nil && error == nil {
+                    
+                    self.refreshControl?.endRefreshing()
+                    
+                    if since_id > 0{
+                        
+                        self.shwNewStatusLabel(status!.count)
+                        
+                        self.statues = status! + self.statues!
+                        
+                        
+                    } else if max_id > 0 {
+                        
+                        self.statues = self.statues! + status!
+                        
+                        self.pullRefreshFlag = false
+                        
+                    } else {
+                        
+                        self.statues = status
+                    }
+                    
+                    
+                    
+                } else {
+                    
+                    
+                    
+                    self.refreshControl?.endRefreshing()
+                    
+                    let ac = UIAlertController(title: "网路提示", message: "\(error!.localizedDescription)\n请检查网络是否畅通", preferredStyle: .Alert)
+                    
+                    ac.addAction(UIAlertAction(title: "ok", style: .Default, handler: nil))
+                    
+                    self.presentViewController(ac, animated: true, completion: nil)
+                    
+                    
+                }
+            })
    
         
-            Status.loadStatuses(since_id, max_id:max_id ,weiboAccessToken: weiboAccessToken, completeionHandler: { (status, error) -> Void in
+            /*Status.loadStatuses(since_id, max_id:max_id ,weiboAccessToken: weiboAccessToken, completeionHandler: { (status, error) -> Void in
                 
                 if status != nil && error == nil {
                     
@@ -182,7 +227,7 @@ class HomeViewController: BaseViewController {
                     
                 }
             
-            })
+            })*/
         }
     
         

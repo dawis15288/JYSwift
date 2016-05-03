@@ -15,13 +15,13 @@ class JYCommentCell: UITableViewCell {
     @IBOutlet weak var floorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    var data: NSDictionary!
+    var data: Comments?
     
     override func layoutSubviews() {
         
         super.layoutSubviews()
         
-        let user: AnyObject! = self.data["user"]
+        /*let user: AnyObject! = self.data["user"]
         
         if user as! NSObject != NSNull() {
         
@@ -75,14 +75,18 @@ class JYCommentCell: UITableViewCell {
         
         let floor = self.data.stringAttributeForkey("floor")
         
-        self.floorLabel!.text = "\(floor)楼"
+        self.floorLabel!.text = "\(floor)楼"*/
     }
     
-    class func cellHeightByData(data: NSDictionary) -> CGFloat {
+    class func cellHeightByData(data: Comments) -> CGFloat {
         
-        let conten = data.stringAttributeForkey("content")
+        var height: CGFloat = 0
         
-        let height = conten.stringheightWith(17, width: 300)
+        if let conten = data.content {
+            
+           height = conten.stringheightWith(17, width: 300)
+        
+        }
         
         return 53.0 + height + 24.0
     

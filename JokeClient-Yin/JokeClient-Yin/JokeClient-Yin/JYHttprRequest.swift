@@ -18,7 +18,7 @@ class JYHttprRequest: NSObject {
         
     }
     
-    class func requestWithURL(urlString: String, completionHandler:(data: AnyObject) -> Void) {
+    class func requestWithURL(urlString: String, completionHandler:(data: [[String: AnyObject]]?) -> Void) {
         
         let URL = NSURL(string: urlString)
         
@@ -40,7 +40,7 @@ class JYHttprRequest: NSObject {
                         
                         print(error?.localizedDescription)
                         
-                        completionHandler(data: NSNull())
+                        completionHandler(data: nil)
                         
                     }
                     
@@ -51,11 +51,13 @@ class JYHttprRequest: NSObject {
                         
                         let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
                         
+                        let data = jsonData["items"] as? [[String: AnyObject]]
+                        
                         dispatch_async(dispatch_get_main_queue()) { () -> Void in
                             
-                            completionHandler(data: jsonData)
+                            completionHandler(data: data)
                             
-                        }
+                       }
                         
                     } catch _ {}
                     

@@ -29,6 +29,22 @@ extension HomeViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(StatuTableViewCellReuseIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
         
+        if let weiboAccessToken = UserAccount.loadAccount()?.access_token {
+            
+            weiboNetWorkTool.loadComments(weiboAccessToken, webId: status.id, completedhandler: { (modules, error) in
+                
+                if modules != nil && error == nil {
+                    
+                        status.comments = modules
+                    
+                    }
+                
+                
+                })
+            
+            
+        }
+        
         
         
         cell.status = status

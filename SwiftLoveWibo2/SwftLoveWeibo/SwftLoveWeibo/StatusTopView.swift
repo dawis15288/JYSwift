@@ -15,9 +15,6 @@ class StatusTopView: UIView {
     var status: Status? {
         
         didSet {
-            //print("\(status?.user)\n\n\n")
-    
-            
             
             nameLabel.text = status!.user!.name
             

@@ -132,11 +132,13 @@ class Status: NSObject {
     comments_count	int	评论数
     attitudes_count	int	表态数*/
     
-    var repostsCount: Int?
+    var comments: [Comments]?
     
-    var commentsCount: Int?
+    var reposts_count: Int = 0
     
-    var attitudesCount: Int?
+    var comments_count: Int = 0
+    
+    var attitudes_count: Int = 0
     
     var retweeted_Status: Status? {
         
@@ -171,7 +173,9 @@ class Status: NSObject {
         
     }
     
-     private class func cacheWbImage(list: [Status], completedhandler: ((modules: [Status]?, error: NSError?) -> Void)? ) {
+     //private 
+    
+    /*class func cacheWbImage(list: [Status], completedhandler: ((modules: [Status]?, error: NSError?) -> Void)? ) {
         
         if list.count == 0 {
         
@@ -213,7 +217,7 @@ class Status: NSObject {
         
         }
     
-    }
+    }*/
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
@@ -226,6 +230,8 @@ class Status: NSObject {
         if "user" == key {
             
             if let dict = value as? [String: AnyObject] {
+                
+                print("\(dict)")
                 
                 
                 user = User(dict: dict)
@@ -251,7 +257,9 @@ class Status: NSObject {
         super.setValue(value, forKey: key)
     }
     
-    private class func status(array: [[String: AnyObject]]) -> [Status] {
+    //private 
+    
+    class func status(array: [[String: AnyObject]]) -> [Status] {
     
         var models = [Status]()
         
@@ -264,7 +272,7 @@ class Status: NSObject {
         return models
     }
     
-    class func loadStatuses(since_id: Int, max_id: Int ,weiboAccessToken: String, completeionHandler: ((statuses: [Status]?, error: NSError?) -> Void)) {
+    /*class func loadStatuses(since_id: Int, max_id: Int ,weiboAccessToken: String, completeionHandler: ((statuses: [Status]?, error: NSError?) -> Void)) {
         
         
         
@@ -380,6 +388,15 @@ class Status: NSObject {
             
        // }
         
+        
+    }*/
+    
+    class func footerData(reposts_count: Int, comments_count: Int, attitudes_count: Int) -> [String: Int] {
+    
+        
+        return ["reposts_count": reposts_count, "comments_count": comments_count, "attitudes_count": attitudes_count
+            
+        ]
         
     }
 

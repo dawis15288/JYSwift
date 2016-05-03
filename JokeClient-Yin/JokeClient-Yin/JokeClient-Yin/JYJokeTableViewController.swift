@@ -29,7 +29,15 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
     var tableView: UITableView?
     
     
-    var dataArray = NSMutableArray()
+    var dataArray: [Statues]? {
+        
+        didSet {
+            
+            tableView!.reloadData()
+            
+        }
+    
+    }
     
     var page: Int = 1
     
@@ -41,7 +49,7 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         //imageViewTapped
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "imageViewTapped:", name: "imageViewTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JYJokeTableViewController.imageViewTapped(_:)), name: "imageViewTapped", object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -75,9 +83,11 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.tableView?.separatorStyle = .None
         
-        let nib = UINib(nibName: "CYTableViewCell", bundle: nil)
+        //let nib = UINib(nibName: "CYTableViewCell", bundle: nil)
         
-        self.tableView?.registerNib(nib, forCellReuseIdentifier: identifier)
+        //self.tableView?.registerNib(nib, forCellReuseIdentifier: identifier)
+        
+        self.tableView?.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: identifier)
         
         //JYRefreshView
         
@@ -105,7 +115,7 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
             
             //print(data)
         
-            if data as! NSObject == NSNull() {
+            if data == nil {
                 
                 self.presentViewController(UIView.showAlertView("提示", message: "加载失败"), animated: true, completion: { () -> Void in
                     
@@ -115,21 +125,22 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 return
             
-            }
-            
-            let arr = data["items"] as! NSArray
-            
-            for data: AnyObject in arr {
+            } else {
                 
-                self.dataArray.addObject(data)
+                //let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                
+                if let itemes = data {
+                    
+                    self.dataArray = Statues.model2status(itemes)
+                    
+                }
+                
             
             }
-            
-            self.tableView?.reloadData()
             
             self.refreshView?.stopLoading()
             
-            self.page++
+            self.page += self.page
         
         })
         
@@ -161,60 +172,7 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-        
-    }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.dataArray.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as? CYTableViewCell
-        
-        if (cell == nil) {
-            
-            cell = CYTableViewCell()
-        
-        }
-        
-        let index = indexPath.row
-        
-        let data = self.dataArray[index] as! NSDictionary
-        
-        cell!.data = data
-        
-        return cell!
-        
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        let index = indexPath.row
-        
-        let data = self.dataArray[index] as! NSDictionary
-        
-        return CYTableViewCell.cellheightByData(data)
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let index = indexPath.row
-        
-        let data = self.dataArray[index] as! NSDictionary
-        
-        let commentsVc = JYCommentsViewController()
-        
-        commentsVc.jokeId = data.stringAttributeForkey("id")
-        
-        self.navigationController?.pushViewController(commentsVc, animated: true)
-        
-        
-    }
     
     func refreshView(refreshView: JYRefreshViewController, didClickButton btn: UIButton) {
         
@@ -229,7 +187,7 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         let popoverVC = JYImageViewController(nibName: nil, bundle: nil)
         
-        let tap = UITapGestureRecognizer(target: self, action: "dismissBifImage")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(JYJokeTableViewController.dismissBifImage))
         
         popoverVC.view.addGestureRecognizer(tap)
         
@@ -299,5 +257,76 @@ class JYJokeTableViewController: UIViewController, UITableViewDataSource, UITabl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    var rowheightCache: [Int: CGFloat] = [Int: CGFloat]()
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
+        return 1
+        
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return self.dataArray?.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as? StatusTableViewCell
+        
+        if (cell == nil) {
+            
+            cell = StatusTableViewCell()
+            
+        }
+        
+        let index = indexPath.row
+        
+        let data = self.dataArray![index]
+        
+        cell!.data = data
+        
+        return cell!
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        //let index = indexPath.row
+        
+        //let data = self.dataArray![index]
+        
+        //return CYTableViewCell.cellheightByData(data)
+        
+        let status = dataArray![indexPath.row]
+        
+        if let height = rowheightCache[status.id] {
+            
+            return height
+            
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! StatusTableViewCell
+        
+        let rowHeight = cell.rowHeights(status)
+        
+        rowheightCache[status.id] = rowHeight
+        
+        return rowHeight
+        
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let index = indexPath.row
+        
+        let data = self.dataArray![index]
+        
+        let commentsVc = JYCommentsViewController()
+        
+        commentsVc.jokeId = "\(data.id)"
+        
+        self.navigationController?.pushViewController(commentsVc, animated: true)
+    }
 }
